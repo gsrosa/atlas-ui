@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @layer base {
-  .atlas-ui {
+  :root {
     /* Primary (Teal) */
     --atlas-color-primary-50: #f8ffff;
     --atlas-color-primary-100: #eefcfc;
@@ -97,7 +97,9 @@
     /* Typography */
     --atlas-font-sans: "PingFang SC", -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     --atlas-font-mono: Consolas, "JetBrains Mono", ui-monospace, monospace;
+  }
 
+  .atlas-ui {
     font-family: var(--atlas-font-sans);
     color: var(--atlas-surface-foreground);
     background-color: var(--atlas-surface-background);
