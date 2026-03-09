@@ -1,13 +1,23 @@
+export interface AtlasColorScale {
+  50: string;
+  100: string;
+  200: string;
+  300: string;
+  400: string;
+  500: string;
+  600: string;
+  700: string;
+}
+
 export interface AtlasTheme {
   colors: {
-    brand: Record<string, string>;
-    neutral: Record<string, string>;
-    semantic: {
-      success: string;
-      warning: string;
-      error: string;
-      info: string;
-    };
+    primary: AtlasColorScale;
+    auxiliary: AtlasColorScale;
+    neutral: AtlasColorScale & { white: string; black: string };
+    success: AtlasColorScale;
+    warning: AtlasColorScale;
+    danger: AtlasColorScale;
+    info: AtlasColorScale;
     surface: {
       background: string;
       foreground: string;
@@ -16,6 +26,12 @@ export interface AtlasTheme {
       border: string;
       ring: string;
     };
+  };
+  shadow: {
+    sm: string;
+    md: string;
+    lg: string;
+    xl: string;
   };
   radius: {
     sm: string;
@@ -31,46 +47,92 @@ export interface AtlasTheme {
 
 export const defaultTheme: AtlasTheme = {
   colors: {
-    brand: {
-      50: "#eff6ff",
-      100: "#dbeafe",
-      200: "#bfdbfe",
-      300: "#93c5fd",
-      400: "#60a5fa",
-      500: "#3b82f6",
-      600: "#2563eb",
-      700: "#1d4ed8",
-      800: "#1e40af",
-      900: "#1e3a8a",
-      950: "#172554",
+    primary: {
+      50: "#f8ffff",
+      100: "#eefcfc",
+      200: "#dff7f7",
+      300: "#b0ebec",
+      400: "#7ddde1",
+      500: "#47cfd6",
+      600: "#15c5ce",
+      700: "#00abb6",
+    },
+    auxiliary: {
+      50: "#fffcfc",
+      100: "#fff6f3",
+      200: "#fff2ee",
+      300: "#ffe1d6",
+      400: "#ffc8b6",
+      500: "#ffa487",
+      600: "#ff8156",
+      700: "#fe632f",
     },
     neutral: {
+      white: "#ffffff",
       50: "#fafafa",
       100: "#f5f5f5",
-      200: "#e5e5e5",
-      300: "#d4d4d4",
-      400: "#a3a3a3",
-      500: "#737373",
-      600: "#525252",
-      700: "#404040",
-      800: "#262626",
-      900: "#171717",
-      950: "#0a0a0a",
+      200: "#eeeeee",
+      300: "#e1e1e1",
+      400: "#cacaca",
+      500: "#8e8e8e",
+      600: "#4b4b4b",
+      700: "#1f1f1f",
+      black: "#000000",
     },
-    semantic: {
-      success: "#22c55e",
-      warning: "#eab308",
-      error: "#ef4444",
-      info: "#3b82f6",
+    success: {
+      50: "#fbfefc",
+      100: "#f2faf6",
+      200: "#e5f5ec",
+      300: "#c0e5d1",
+      400: "#97d4b4",
+      500: "#6bc497",
+      600: "#47b881",
+      700: "#0c9d61",
+    },
+    warning: {
+      50: "#fffdfa",
+      100: "#fff9ee",
+      200: "#fff7e1",
+      300: "#ffeab3",
+      400: "#ffdd82",
+      500: "#ffc62b",
+      600: "#ffad0d",
+      700: "#fe9b0e",
+    },
+    danger: {
+      50: "#fffbfb",
+      100: "#fef2f2",
+      200: "#ffebee",
+      300: "#ffccd2",
+      400: "#f49898",
+      500: "#eb6f70",
+      600: "#f64c4c",
+      700: "#ec2d30",
+    },
+    info: {
+      50: "#f8fcff",
+      100: "#f1f8ff",
+      200: "#e4f2ff",
+      300: "#bdddff",
+      400: "#93c8ff",
+      500: "#4ba1ff",
+      600: "#3b82f6",
+      700: "#3a70e2",
     },
     surface: {
       background: "#ffffff",
-      foreground: "#0a0a0a",
-      muted: "#f5f5f5",
-      mutedForeground: "#737373",
-      border: "#e5e5e5",
-      ring: "#3b82f6",
+      foreground: "#1f1f1f",
+      muted: "#fafafa",
+      mutedForeground: "#8e8e8e",
+      border: "#e1e1e1",
+      ring: "#15c5ce",
     },
+  },
+  shadow: {
+    sm: "0px 1px 1px 0px rgba(0, 0, 0, 0.02), 0px 1px 4px 0px rgba(0, 0, 0, 0.04)",
+    md: "0px 2px 4px 0px rgba(0, 0, 0, 0.04), 0px 4px 10px 0px rgba(0, 0, 0, 0.08)",
+    lg: "0px 2px 20px 0px rgba(0, 0, 0, 0.04), 0px 8px 32px 0px rgba(0, 0, 0, 0.08)",
+    xl: "0px 8px 20px 0px rgba(0, 0, 0, 0.06), 0px 24px 60px 0px rgba(0, 0, 0, 0.12)",
   },
   radius: {
     sm: "0.25rem",
@@ -79,26 +141,27 @@ export const defaultTheme: AtlasTheme = {
     xl: "0.75rem",
   },
   font: {
-    sans: "'Inter', ui-sans-serif, system-ui, sans-serif",
-    mono: "'JetBrains Mono', ui-monospace, monospace",
+    sans: "'PingFang SC', -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif",
+    mono: "Consolas, 'JetBrains Mono', ui-monospace, monospace",
   },
 };
 
 export const themeToCSSVariables = (theme: AtlasTheme): Record<string, string> => {
   const variables: Record<string, string> = {};
 
-  for (const [shade, value] of Object.entries(theme.colors.brand)) {
-    variables[`--atlas-color-brand-${shade}`] = value;
-  }
+  const mapScale = (prefix: string, scale: object) => {
+    for (const [shade, value] of Object.entries(scale)) {
+      variables[`--atlas-color-${prefix}-${shade}`] = value;
+    }
+  };
 
-  for (const [shade, value] of Object.entries(theme.colors.neutral)) {
-    variables[`--atlas-color-neutral-${shade}`] = value;
-  }
-
-  variables["--atlas-color-success"] = theme.colors.semantic.success;
-  variables["--atlas-color-warning"] = theme.colors.semantic.warning;
-  variables["--atlas-color-error"] = theme.colors.semantic.error;
-  variables["--atlas-color-info"] = theme.colors.semantic.info;
+  mapScale("primary", theme.colors.primary);
+  mapScale("auxiliary", theme.colors.auxiliary);
+  mapScale("neutral", theme.colors.neutral);
+  mapScale("success", theme.colors.success);
+  mapScale("warning", theme.colors.warning);
+  mapScale("danger", theme.colors.danger);
+  mapScale("info", theme.colors.info);
 
   variables["--atlas-surface-background"] = theme.colors.surface.background;
   variables["--atlas-surface-foreground"] = theme.colors.surface.foreground;
@@ -106,6 +169,11 @@ export const themeToCSSVariables = (theme: AtlasTheme): Record<string, string> =
   variables["--atlas-surface-muted-foreground"] = theme.colors.surface.mutedForeground;
   variables["--atlas-surface-border"] = theme.colors.surface.border;
   variables["--atlas-surface-ring"] = theme.colors.surface.ring;
+
+  variables["--atlas-shadow-sm"] = theme.shadow.sm;
+  variables["--atlas-shadow-md"] = theme.shadow.md;
+  variables["--atlas-shadow-lg"] = theme.shadow.lg;
+  variables["--atlas-shadow-xl"] = theme.shadow.xl;
 
   variables["--atlas-radius-sm"] = theme.radius.sm;
   variables["--atlas-radius-md"] = theme.radius.md;

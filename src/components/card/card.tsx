@@ -9,7 +9,7 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
     <div
       ref={ref}
       className={cn(
-        "rounded-[var(--atlas-radius-lg)] border border-[var(--atlas-surface-border)] bg-[var(--atlas-surface-background)] text-[var(--atlas-surface-foreground)] shadow-sm",
+        "rounded-[var(--atlas-radius-lg)] border border-[var(--atlas-surface-border)] bg-[var(--atlas-surface-background)] text-[var(--atlas-surface-foreground)] shadow-[var(--atlas-shadow-sm)]",
         className,
       )}
       {...props}

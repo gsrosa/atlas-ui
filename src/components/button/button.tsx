@@ -17,7 +17,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary:
-          "bg-[var(--atlas-color-brand-600)] text-white hover:bg-[var(--atlas-color-brand-700)] active:bg-[var(--atlas-color-brand-800)]",
+          "bg-[var(--atlas-color-primary-600)] text-white hover:bg-[var(--atlas-color-primary-700)] active:bg-[var(--atlas-color-primary-700)]",
         secondary:
           "bg-[var(--atlas-color-neutral-100)] text-[var(--atlas-surface-foreground)] border border-[var(--atlas-surface-border)] hover:bg-[var(--atlas-color-neutral-200)] active:bg-[var(--atlas-color-neutral-300)]",
         ghost:

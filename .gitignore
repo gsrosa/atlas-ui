@@ -10,6 +10,11 @@ storybook-static/
 # IDE
 .vscode/
 .idea/
+.cursor/mcp.json
+
+# Environment
+.env
+.env.local
 
 # OS
 .DS_Store

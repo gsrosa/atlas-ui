@@ -20,11 +20,12 @@ export {
 export { AtlasProvider, useAtlasTheme } from "./theme";
 export { defaultTheme, themeToCSSVariables, type AtlasTheme } from "./theme";
 
-export { colors, spacing, radius, fontFamily, fontSize, fontWeight } from "./tokens";
+export { colors, spacing, radius, shadow, fontFamily, fontSize, fontWeight } from "./tokens";
 export type {
   ColorToken,
   SpacingToken,
   RadiusToken,
+  ShadowToken,
   FontFamilyToken,
   FontSizeToken,
   FontWeightToken,
