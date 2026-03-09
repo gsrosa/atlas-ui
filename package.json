@@ -1,8 +1,16 @@
 {
-  "name": "@atlas/ui",
+  "name": "@gsrosa/atlas-ui",
   "version": "0.1.0",
   "type": "module",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gsrosa/atlas-ui.git"
+  },
+  "packageManager": "pnpm@10.18.1",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "sideEffects": [
     "**/*.css"
   ],
