@@ -12,13 +12,20 @@ export default defineConfig({
       insertTypeBefore: true,
       tsconfigPath: "./tsconfig.json",
       include: ["src"],
-      exclude: ["src/**/*.stories.tsx"],
+      exclude: ["src/**/*.stories.tsx", "src/**/*.test.tsx"],
     }),
   ],
   resolve: {
     alias: {
       "@": resolve(__dirname, "./src"),
     },
+  },
+  test: {
+    globals: true,
+    environment: "jsdom",
+    setupFiles: ["./src/test/setup.ts"],
+    include: ["src/**/*.test.{ts,tsx}"],
+    css: false,
   },
   build: {
     lib: {
