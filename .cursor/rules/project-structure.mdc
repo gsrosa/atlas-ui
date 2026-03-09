@@ -1,0 +1,134 @@
+---
+alwaysApply: true
+---
+# Atlas UI — Project Structure
+
+## Overview
+
+**Atlas UI** is a shared React Design System used across the Atlas microfrontend ecosystem.
+
+Its responsibilities include:
+
+- Providing reusable, accessible UI components
+- Managing design tokens and theming
+- Distributing a tree-shakeable library via pnpm
+
+The design system must contain **only presentational and composable UI logic**, avoiding any business or application logic.
+
+All source code must live inside the `src` directory.
+
+---
+
+# Root Structure
+
+```
+src
+|
++-- components
++-- tokens
++-- theme
++-- hooks
++-- utils
++-- styles
+|
++-- index.ts
+```
+
+---
+
+# Folder Responsibilities
+
+## components
+
+Reusable UI components. Each component lives in its own folder.
+
+Every component folder must contain:
+
+```
+src/components/my-component
+|
++-- my-component.tsx        # Component implementation
++-- my-component.stories.tsx # Storybook stories
++-- index.ts                 # Barrel export
+```
+
+Rules:
+
+- One component per folder
+- Export component, variant types, and props via `index.ts`
+- Use CVA for variant definitions
+- Use Radix UI primitives for complex interactive patterns
+- Reference design tokens via CSS variables, never hardcode colors/spacing
+
+---
+
+## tokens
+
+Design token definitions mapped to CSS custom properties.
+
+```
+src/tokens/colors.ts
+src/tokens/spacing.ts
+src/tokens/typography.ts
+src/tokens/index.ts
+```
+
+Tokens define the contract between the theme and components. Components read tokens via `var(--atlas-*)`.
+
+---
+
+## theme
+
+Theme definitions and the provider component.
+
+```
+src/theme/atlas-theme.ts    # Theme type, default values, CSS variable converter
+src/theme/provider.tsx       # AtlasProvider (ThemeContext + CSS variable injection)
+src/theme/index.ts
+```
+
+The `AtlasProvider` must wrap any consumer application to inject the design tokens as CSS custom properties.
+
+---
+
+## hooks
+
+Reusable hooks shared across the design system.
+
+```
+src/hooks/index.ts
+```
+
+---
+
+## utils
+
+Generic utility functions.
+
+```
+src/utils/cn.ts             # clsx + tailwind-merge helper
+src/utils/index.ts
+```
+
+---
+
+## styles
+
+Global stylesheet with Tailwind import and default CSS variable definitions.
+
+```
+src/styles/globals.css
+```
+
+---
+
+## index.ts
+
+Main barrel export. All public API surfaces must be exported from here.
+
+Consumers import from `@atlas/ui`:
+
+```tsx
+import { Button, AtlasProvider, cn } from "@atlas/ui";
+import "@atlas/ui/styles";
+```
