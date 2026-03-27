@@ -168,10 +168,16 @@ export {
   type TooltipContentProps,
 } from "./components/tooltip";
 
-export { AtlasProvider, useAtlasTheme } from "./theme";
-export { defaultTheme, themeToCSSVariables, type AtlasTheme } from "./theme";
+export { AtlasProvider, useAtlasTheme, type ThemeMode } from "./theme";
+export {
+  defaultTheme,
+  lightTheme,
+  themeToCSSVariables,
+  type AtlasTheme,
+  type AtlasColorScale,
+} from "./theme";
 
-export { colors, spacing, radius, shadow, fontFamily, fontSize, fontWeight } from "./tokens";
+export { colors, spacing, radius, shadow, fontFamily, fontSize, fontWeight, letterSpacing } from "./tokens";
 export type {
   ColorToken,
   SpacingToken,
@@ -180,6 +186,7 @@ export type {
   FontFamilyToken,
   FontSizeToken,
   FontWeightToken,
+  LetterSpacingToken,
 } from "./tokens";
 
 export { cn } from "./utils";

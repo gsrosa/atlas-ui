@@ -17,11 +17,11 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary:
-          "bg-[var(--atlas-color-primary-600)] text-white hover:bg-[var(--atlas-color-primary-700)] active:bg-[var(--atlas-color-primary-700)]",
+          "rounded-full bg-[linear-gradient(135deg,var(--atlas-color-primary-300),var(--atlas-color-primary-500))] text-[var(--atlas-color-neutral-700)] hover:opacity-95 active:opacity-90",
         secondary:
-          "bg-[var(--atlas-color-neutral-100)] text-[var(--atlas-surface-foreground)] border border-[var(--atlas-surface-border)] hover:bg-[var(--atlas-color-neutral-200)] active:bg-[var(--atlas-color-neutral-300)]",
+          "bg-[var(--atlas-surface-container-highest)] text-[var(--atlas-surface-foreground)] hover:brightness-110 active:brightness-95",
         ghost:
-          "text-[var(--atlas-surface-foreground)] hover:bg-[var(--atlas-color-neutral-100)] active:bg-[var(--atlas-color-neutral-200)]",
+          "text-[var(--atlas-surface-foreground)] hover:bg-[color-mix(in_oklab,var(--atlas-color-primary-300)_10%,transparent)] active:bg-[color-mix(in_oklab,var(--atlas-color-primary-300)_14%,transparent)]",
       },
       size: {
         sm: "h-8 px-3 text-xs [&_svg]:size-3.5",

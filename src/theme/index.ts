@@ -1,2 +1,8 @@
-export { defaultTheme, themeToCSSVariables, type AtlasTheme } from "./atlas-theme";
-export { AtlasProvider, useAtlasTheme } from "./provider";
+export {
+  defaultTheme,
+  lightTheme,
+  themeToCSSVariables,
+  type AtlasTheme,
+  type AtlasColorScale,
+} from "./atlas-theme";
+export { AtlasProvider, useAtlasTheme, type ThemeMode } from "./provider";

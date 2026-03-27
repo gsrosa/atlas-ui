@@ -34,6 +34,7 @@
     "./styles": "./dist/atlas-ui.css"
   },
   "scripts": {
+    "prepare": "pnpm run build",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",

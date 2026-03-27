@@ -85,6 +85,11 @@ export const colors = {
     mutedForeground: "var(--atlas-surface-muted-foreground)",
     border: "var(--atlas-surface-border)",
     ring: "var(--atlas-surface-ring)",
+    containerLow: "var(--atlas-surface-container-low)",
+    container: "var(--atlas-surface-container)",
+    containerHigh: "var(--atlas-surface-container-high)",
+    containerHighest: "var(--atlas-surface-container-highest)",
+    containerLowest: "var(--atlas-surface-container-lowest)",
   },
 } as const;
 

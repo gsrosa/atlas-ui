@@ -5,7 +5,9 @@ export {
   fontFamily,
   fontSize,
   fontWeight,
+  letterSpacing,
   type FontFamilyToken,
   type FontSizeToken,
   type FontWeightToken,
+  type LetterSpacingToken,
 } from "./typography";
