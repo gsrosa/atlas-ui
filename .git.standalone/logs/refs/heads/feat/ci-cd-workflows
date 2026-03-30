@@ -1,4 +1,0 @@
-0000000000000000000000000000000000000000 8183c3ce5f5eff08826f8c6f3e3d8dec3c4f644b gsrosa <gui.rosa.soares@gmail.com> 1773075958 -0300	branch: Created from HEAD
-8183c3ce5f5eff08826f8c6f3e3d8dec3c4f644b 9e1c277c27605ca0e0a456736a653f0c888d44a3 gsrosa <gui.rosa.soares@gmail.com> 1773076020 -0300	commit: ci: add GitHub workflows for CI, release and publish
-9e1c277c27605ca0e0a456736a653f0c888d44a3 5ba7221b8deff9ece310dc530f70b5607912d83f gsrosa <gui.rosa.soares@gmail.com> 1773173290 -0300	commit: fix(ci): workflows and add eslint config for lint step
-5ba7221b8deff9ece310dc530f70b5607912d83f 9cba72f73e93a88cbc0aada79d6e398806cfa2e0 gsrosa <gui.rosa.soares@gmail.com> 1773173420 -0300	commit: fix: use full action URLs in workflows, exclude tests from tsc build

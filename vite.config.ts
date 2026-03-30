@@ -12,7 +12,11 @@ export default defineConfig({
       insertTypeBefore: true,
       tsconfigPath: "./tsconfig.json",
       include: ["src"],
-      exclude: ["src/**/*.stories.tsx", "src/**/*.test.tsx"],
+      exclude: [
+        "src/**/*.stories.tsx",
+        "src/**/*.test.tsx",
+        "src/styles/styles-entry.ts",
+      ],
     }),
   ],
   resolve: {

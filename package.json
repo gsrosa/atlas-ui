@@ -15,12 +15,14 @@
     "**/*.css"
   ],
   "files": [
-    "dist"
+    "dist",
+    "src/styles"
   ],
   "main": "./dist/atlas-ui.cjs",
   "module": "./dist/atlas-ui.js",
   "types": "./dist/src/index.d.ts",
   "exports": {
+    "./package.json": "./package.json",
     ".": {
       "import": {
         "types": "./dist/src/index.d.ts",
@@ -31,12 +33,16 @@
         "default": "./dist/atlas-ui.cjs"
       }
     },
-    "./styles": "./dist/atlas-ui.css"
+    "./styles": "./dist/atlas-ui.css",
+    "./styles/globals": "./src/styles/globals.css",
+    "./tokens": "./dist/tokens.css",
+    "./theme": "./src/styles/atlas-ui-theme.css",
+    "./styles/base": "./src/styles/atlas-ui-base.css"
   },
   "scripts": {
     "prepare": "pnpm run build",
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && vite build --config vite.config.styles.ts && cp src/styles/tokens.css dist/tokens.css && rm -f dist/.atlas-ui-styles-entry dist/.atlas-ui-styles-entry.js",
     "lint": "eslint .",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
