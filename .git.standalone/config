@@ -1,0 +1,26 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+	ignorecase = true
+	precomposeunicode = true
+[remote "origin"]
+	url = https://github.com/gsrosa/atlas-ui.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "main"]
+	remote = origin
+	merge = refs/heads/main
+	vscode-merge-base = origin/main
+	vscode-merge-base = origin/main
+[user]
+	name = gsrosa
+	email = gui.rosa.soares@gmail.com
+[branch "feat/ci-cd-workflows"]
+	remote = origin
+	merge = refs/heads/feat/ci-cd-workflows
+	vscode-merge-base = origin/main
+[branch "feat/digital-cartographer-design-system"]
+	vscode-merge-base = origin/main
+	remote = origin
+	merge = refs/heads/feat/digital-cartographer-design-system

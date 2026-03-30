@@ -1,0 +1,9 @@
+0000000000000000000000000000000000000000 0467ed9751327c24a7a9d1712e41c6350033c598 guilherme soares <guilherme@guilhermes-MacBook-Pro.local> 1773072581 -0300	commit (initial): chore: initial atlas-ui design system scaffold
+0467ed9751327c24a7a9d1712e41c6350033c598 e72bbd113106551a316072ebf370664617a9148a gsrosa <gui.rosa.soares@gmail.com> 1773072663 -0300	commit (amend): chore: initial atlas-ui design system scaffold
+e72bbd113106551a316072ebf370664617a9148a eb8e18b947a3a604acbbfe61d029a33220028f1d gsrosa <gui.rosa.soares@gmail.com> 1773073984 -0300	commit: feat: sync design tokens from Figma source file
+eb8e18b947a3a604acbbfe61d029a33220028f1d ad6b1e79cb5ef52eaaf64faf5a583e48c978e6fa gsrosa <gui.rosa.soares@gmail.com> 1773074216 -0300	commit: feat: add full component library
+ad6b1e79cb5ef52eaaf64faf5a583e48c978e6fa e6a95c6a2daf9d834a05f1415e5702322aa053a3 gsrosa <gui.rosa.soares@gmail.com> 1773075185 -0300	commit: feat: add Storybook stories for all components
+e6a95c6a2daf9d834a05f1415e5702322aa053a3 e1f9d541993b36fb329cb189082bfb696d90d853 gsrosa <gui.rosa.soares@gmail.com> 1773075517 -0300	commit: test: add unit tests and a11y checks for all 21 components
+e1f9d541993b36fb329cb189082bfb696d90d853 8183c3ce5f5eff08826f8c6f3e3d8dec3c4f644b gsrosa <gui.rosa.soares@gmail.com> 1773075752 -0300	commit: fix: move CSS custom properties to :root for portal components
+8183c3ce5f5eff08826f8c6f3e3d8dec3c4f644b 373d8b047bc03d90c6009703ce8af4c0d659fad9 gsrosa <gui.rosa.soares@gmail.com> 1773173423 -0300	pull origin main: Fast-forward
+373d8b047bc03d90c6009703ce8af4c0d659fad9 c5e2bd083bf0f1de49ade218168d5d0a279f6e1a gsrosa <gui.rosa.soares@gmail.com> 1773173423 -0300	merge feat/ci-cd-workflows: Merge made by the 'ort' strategy.
