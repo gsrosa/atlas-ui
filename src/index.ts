@@ -188,3 +188,11 @@ export type {
 } from "./tokens";
 
 export { cn } from "./utils";
+
+export {
+  TripDayStepper,
+  TripStatBar,
+  type TripAttractionData,
+  type TripDayStepperProps,
+  type TripStatBarProps,
+} from "./components/trip";

@@ -39,12 +39,13 @@ export default defineConfig({
       fileName: "atlas-ui",
     },
     rollupOptions: {
-      external: ["react", "react-dom", "react/jsx-runtime"],
+      external: ["react", "react-dom", "react/jsx-runtime", "lucide-react"],
       output: {
         globals: {
           react: "React",
           "react-dom": "ReactDOM",
           "react/jsx-runtime": "react/jsx-runtime",
+          "lucide-react": "LucideReact",
         },
         preserveModules: false,
       },
