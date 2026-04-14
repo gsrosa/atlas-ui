@@ -192,6 +192,7 @@ export { cn } from "./utils";
 export {
   TripDayStepper,
   TripStatBar,
+  type LodgingEvent,
   type TripAttractionData,
   type TripDayStepperProps,
   type TripStatBarProps,

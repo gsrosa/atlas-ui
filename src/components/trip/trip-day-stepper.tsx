@@ -1,4 +1,4 @@
-import { ClockIcon, DollarSignIcon, MapIcon } from 'lucide-react';
+import { BedDoubleIcon, ClockIcon, DollarSignIcon, MapIcon } from 'lucide-react';
 import type { ReactNode } from 'react';
 
 import { cn } from '@/utils/cn';
@@ -12,6 +12,11 @@ export interface TripAttractionData {
   openingHours?: string;
 }
 
+export interface LodgingEvent {
+  text: string;
+  type: 'checkin' | 'checkout' | 'staying';
+}
+
 export interface TripDayStepperProps {
   dayNumber: number;
   city: string;
@@ -19,6 +24,7 @@ export interface TripDayStepperProps {
   title?: string;
   isLast: boolean;
   attractions: TripAttractionData[];
+  lodgingEvents?: LodgingEvent[];
   className?: string;
 }
 
@@ -50,6 +56,7 @@ export function TripDayStepper({
   title,
   isLast,
   attractions,
+  lodgingEvents,
   className,
 }: TripDayStepperProps) {
   return (
@@ -82,6 +89,24 @@ export function TripDayStepper({
               <p className="mt-0.5 text-xs italic text-[var(--atlas-surface-muted-foreground)]">
                 {title}
               </p>
+            )}
+            {lodgingEvents && lodgingEvents.length > 0 && (
+              <div className="mt-1.5 flex flex-col gap-0.5">
+                {lodgingEvents.map((ev, i) => (
+                  <span
+                    key={i}
+                    className={cn(
+                      'inline-flex items-center gap-1 text-[11px]',
+                      ev.type === 'checkin'
+                        ? 'text-[var(--atlas-color-primary-400)]'
+                        : 'text-[var(--atlas-surface-muted-foreground)]',
+                    )}
+                  >
+                    <BedDoubleIcon className="size-3 shrink-0" aria-hidden />
+                    {ev.text}
+                  </span>
+                ))}
+              </div>
             )}
           </div>
           <button

@@ -1,5 +1,6 @@
 export {
   TripDayStepper,
+  type LodgingEvent,
   type TripAttractionData,
   type TripDayStepperProps,
 } from './trip-day-stepper';

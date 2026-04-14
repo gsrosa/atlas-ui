@@ -50,3 +50,20 @@ export interface ButtonProps
 - `./tokens` — `tokens.css`
 - `./theme` — theme CSS
 - `./styles/globals` — global base styles
+
+## AI Engineering Infrastructure (.ai/)
+
+See `.ai/README.md` for the full overview. Key sections:
+
+### Rules — read before writing any code
+- `.ai/rules/core.md` — non-negotiable rules (imports, naming, YAGNI)
+- `.ai/rules/react.md` — React & TypeScript patterns
+- `.ai/rules/naming.md` — naming conventions
+- `.ai/rules/styling.md` — tokens, CVA, cn() usage
+- `.ai/rules/testing.md` — testing conventions
+
+### Templates — use when scaffolding new code
+- `.ai/templates/component.md` — component pattern
+
+### Active Context — read when continuing an in-progress feature
+- `.ai/context/current.md` — last session state, next steps, open decisions
