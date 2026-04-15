@@ -42,8 +42,8 @@ const DialogContent = React.forwardRef<
       ref={ref}
       className={cn(
         "fixed left-1/2 top-1/2 z-50 grid w-full max-w-lg -translate-x-1/2 -translate-y-1/2 gap-4",
-        "rounded-[var(--atlas-radius-lg)] border border-[var(--atlas-surface-border)]",
-        "bg-[var(--atlas-surface-background)] p-6 shadow-[var(--atlas-shadow-lg)]",
+        "rounded-(--atlas-radius-lg) border border-(--atlas-surface-border)",
+        "bg-(--atlas-surface-background) p-6 shadow-(--atlas-shadow-lg)",
         "duration-200",
         "data-[state=open]:animate-in data-[state=closed]:animate-out",
         "data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
@@ -55,7 +55,7 @@ const DialogContent = React.forwardRef<
       {...props}
     >
       {children}
-      <DialogPrimitive.Close className="absolute right-4 top-4 rounded-[var(--atlas-radius-sm)] opacity-70 ring-offset-white transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-[var(--atlas-surface-ring)] focus:ring-offset-2 disabled:pointer-events-none">
+      <DialogPrimitive.Close className="absolute right-4 top-4 rounded-(--atlas-radius-sm) opacity-70 ring-offset-(--atlas-surface-background) transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-(--atlas-surface-ring) focus:ring-offset-2 disabled:pointer-events-none">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -124,7 +124,7 @@ const DialogDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <DialogPrimitive.Description
     ref={ref}
-    className={cn("text-sm text-[var(--atlas-surface-muted-foreground)]", className)}
+    className={cn("text-sm text-(--atlas-surface-muted-foreground)", className)}
     {...props}
   />
 ));

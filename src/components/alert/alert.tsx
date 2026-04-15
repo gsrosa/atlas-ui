@@ -5,7 +5,7 @@ import { cn } from "@/utils/cn";
 
 const alertVariants = cva(
   [
-    "relative w-full rounded-[var(--atlas-radius-lg)] border p-4",
+    "relative w-full rounded-(--atlas-radius-lg) border p-4",
     "[&>svg~*]:pl-7 [&>svg+div]:translate-y-[-3px]",
     "[&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:size-5",
   ],
@@ -13,13 +13,13 @@ const alertVariants = cva(
     variants: {
       variant: {
         default:
-          "border-[var(--atlas-color-info-200)] bg-[var(--atlas-color-info-50)] text-[var(--atlas-color-info-700)] [&>svg]:text-[var(--atlas-color-info-600)]",
+          "border-(--atlas-color-info-200) bg-(--atlas-color-info-50) text-(--atlas-color-info-700) [&>svg]:text-(--atlas-color-info-600)",
         success:
-          "border-[var(--atlas-color-success-200)] bg-[var(--atlas-color-success-50)] text-[var(--atlas-color-success-700)] [&>svg]:text-[var(--atlas-color-success-600)]",
+          "border-(--atlas-color-success-200) bg-(--atlas-color-success-50) text-(--atlas-color-success-700) [&>svg]:text-(--atlas-color-success-600)",
         warning:
-          "border-[var(--atlas-color-warning-200)] bg-[var(--atlas-color-warning-50)] text-[var(--atlas-color-warning-700)] [&>svg]:text-[var(--atlas-color-warning-600)]",
+          "border-(--atlas-color-warning-200) bg-(--atlas-color-warning-50) text-(--atlas-color-warning-700) [&>svg]:text-(--atlas-color-warning-600)",
         danger:
-          "border-[var(--atlas-color-danger-200)] bg-[var(--atlas-color-danger-50)] text-[var(--atlas-color-danger-700)] [&>svg]:text-[var(--atlas-color-danger-600)]",
+          "border-(--atlas-color-danger-200) bg-(--atlas-color-danger-50) text-(--atlas-color-danger-700) [&>svg]:text-(--atlas-color-danger-600)",
       },
     },
     defaultVariants: {

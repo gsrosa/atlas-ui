@@ -1,4 +1,4 @@
-export interface AtlasColorScale {
+export type AtlasColorScale = {
   50: string;
   100: string;
   200: string;
@@ -7,35 +7,34 @@ export interface AtlasColorScale {
   500: string;
   600: string;
   700: string;
-}
+  800: string;
+  900: string;
+};
 
-export interface AtlasTheme {
+export type AtlasSurface = {
+  background: string;
+  foreground: string;
+  muted: string;
+  mutedForeground: string;
+  border: string;
+  ring: string;
+  containerLowest: string;
+  containerLow: string;
+  container: string;
+  containerHigh: string;
+  containerHighest: string;
+};
+
+export type AtlasTheme = {
   colors: {
     primary: AtlasColorScale;
     auxiliary: AtlasColorScale;
-    neutral: AtlasColorScale & { white: string; black: string };
+    neutral: AtlasColorScale & { 0: string; 1000: string };
     success: AtlasColorScale;
     warning: AtlasColorScale;
     danger: AtlasColorScale;
     info: AtlasColorScale;
-    surface: {
-      background: string;
-      foreground: string;
-      muted: string;
-      mutedForeground: string;
-      border: string;
-      ring: string;
-      /** Large non-interactive sections (`surface-container-low`). */
-      containerLow: string;
-      /** Cards, default elevated panels (`surface-container`). */
-      container: string;
-      /** Raised cards, menus (`surface-container-high`). */
-      containerHigh: string;
-      /** Modals, emphasis (`surface-container-highest`). */
-      containerHighest: string;
-      /** Recessed inset within elevated surfaces (`surface-container-lowest`). */
-      containerLowest: string;
-    };
+    surface: AtlasSurface;
   };
   shadow: {
     sm: string;
@@ -54,17 +53,12 @@ export interface AtlasTheme {
     display: string;
     mono: string;
   };
-}
+};
 
-/**
- * Digital Cartographer — Atlas default dark theme.
- *
- * Primary → peach to ember (`#ffb5a0` → `#ff5722`)
- * Auxiliary → Glacier blue (`#bdf4ff`) with on-accent `#00363d`
- */
+/* All hex values below MUST match atlas-ui-base.css :root block exactly. */
+
 export const defaultTheme: AtlasTheme = {
   colors: {
-    /* ── Primary (peach → ember) ─────────────────────────────────────── */
     primary: {
       50:  "#fff5f2",
       100: "#ffe8e0",
@@ -74,9 +68,10 @@ export const defaultTheme: AtlasTheme = {
       500: "#ff5722",
       600: "#e64a19",
       700: "#c43e10",
+      800: "#9e2f08",
+      900: "#7a1f04",
     },
 
-    /* ── Auxiliary (Glacier) ─────────────────────────────────────────── */
     auxiliary: {
       50:  "#f0fdff",
       100: "#d4f8ff",
@@ -86,23 +81,25 @@ export const defaultTheme: AtlasTheme = {
       500: "#26c6da",
       600: "#00838f",
       700: "#00363d",
+      800: "#002529",
+      900: "#001417",
     },
 
-    /* ── Neutral (no pure black — `black` token = night trail base) ───── */
     neutral: {
-      white: "#ffffff",
-      50:    "#f8f9fc",
-      100:   "#f1f2f6",
-      200:   "#e2e4ec",
-      300:   "#c8cad6",
-      400:   "#9295aa",
-      500:   "#5a5d72",
-      600:   "#383b4f",
-      700:   "#1e2133",
-      black: "#111317",
+      0:    "#ffffff",
+      50:   "#f8f9fc",
+      100:  "#f1f2f6",
+      200:  "#e2e4ec",
+      300:  "#c8cad6",
+      400:  "#9295aa",
+      500:  "#5a5d72",
+      600:  "#383b4f",
+      700:  "#1e2133",
+      800:  "#16181c",
+      900:  "#111317",
+      1000: "#000000",
     },
 
-    /* ── Semantic ─────────────────────────────────────────────────────── */
     success: {
       50:  "#f0fdf6",
       100: "#dcfce9",
@@ -112,7 +109,10 @@ export const defaultTheme: AtlasTheme = {
       500: "#22c55e",
       600: "#16a34a",
       700: "#15803d",
+      800: "#106632",
+      900: "#0d5429",
     },
+
     warning: {
       50:  "#fffbeb",
       100: "#fef3c7",
@@ -122,7 +122,10 @@ export const defaultTheme: AtlasTheme = {
       500: "#f59e0b",
       600: "#d97706",
       700: "#b45309",
+      800: "#92400e",
+      900: "#78350f",
     },
+
     danger: {
       50:  "#fff1f2",
       100: "#ffe4e6",
@@ -132,7 +135,10 @@ export const defaultTheme: AtlasTheme = {
       500: "#f43f5e",
       600: "#e11d48",
       700: "#be123c",
+      800: "#9b0f30",
+      900: "#7f0e29",
     },
+
     info: {
       50:  "#eff6ff",
       100: "#dbeafe",
@@ -142,9 +148,10 @@ export const defaultTheme: AtlasTheme = {
       500: "#3b82f6",
       600: "#2563eb",
       700: "#1d4ed8",
+      800: "#163ea9",
+      900: "#123386",
     },
 
-    /* ── Dark surfaces — tonal layers (Digital Cartographer) ─────────── */
     surface: {
       background:       "#111317",
       foreground:       "#f1f2f6",
@@ -152,11 +159,11 @@ export const defaultTheme: AtlasTheme = {
       mutedForeground:  "#9295aa",
       border:           "#414754",
       ring:             "#ffb5a0",
-      containerLow:     "#1a1c20",
-      container:        "#1e2024",
-      containerHigh:    "#282a2e",
-      containerHighest: "#333539",
-      containerLowest:  "#16181c",
+      containerLowest:  "#111317",
+      containerLow:     "#16181c",
+      container:        "#1c1e26",
+      containerHigh:    "#22252f",
+      containerHighest: "#2c303c",
     },
   },
 
@@ -181,27 +188,38 @@ export const defaultTheme: AtlasTheme = {
   },
 };
 
-/**
- * Light-mode surface overrides — same brand palette, bright surfaces.
- */
-export const lightSurface: AtlasTheme["colors"]["surface"] = {
+export const lightSurface: AtlasSurface = {
   background:       "#ffffff",
   foreground:       "#1e2133",
   muted:            "#f8f9fc",
   mutedForeground:  "#9295aa",
   border:           "#e2e4ec",
   ring:             "#ff5722",
-  containerLow:     "#f3f4f6",
-  container:        "#eceff1",
-  containerHigh:    "#e8eaed",
-  containerHighest: "#dfe3e6",
-  containerLowest:  "#fafafa",
+  containerLowest:  "#ffffff",
+  containerLow:     "#f8f9fc",
+  container:        "#f1f2f6",
+  containerHigh:    "#eaebf0",
+  containerHighest: "#e2e4ec",
 };
 
 export const lightTheme: AtlasTheme = {
   ...defaultTheme,
   colors: {
     ...defaultTheme.colors,
+    neutral: {
+      0:    "#000000",
+      50:   "#111317",
+      100:  "#16181c",
+      200:  "#1e2133",
+      300:  "#383b4f",
+      400:  "#5a5d72",
+      500:  "#9295aa",
+      600:  "#c8cad6",
+      700:  "#e2e4ec",
+      800:  "#f1f2f6",
+      900:  "#f8f9fc",
+      1000: "#ffffff",
+    },
     surface: lightSurface,
   },
   shadow: {
@@ -222,24 +240,24 @@ export const themeToCSSVariables = (theme: AtlasTheme): Record<string, string> =
   };
 
   mapScale("primary",   theme.colors.primary);
-  mapScale("auxiliary", theme.colors.auxiliary);
+  mapScale("auxiliary",  theme.colors.auxiliary);
   mapScale("neutral",   theme.colors.neutral);
   mapScale("success",   theme.colors.success);
   mapScale("warning",   theme.colors.warning);
   mapScale("danger",    theme.colors.danger);
   mapScale("info",      theme.colors.info);
 
-  variables["--atlas-surface-background"]       = theme.colors.surface.background;
-  variables["--atlas-surface-foreground"]       = theme.colors.surface.foreground;
-  variables["--atlas-surface-muted"]            = theme.colors.surface.muted;
-  variables["--atlas-surface-muted-foreground"] = theme.colors.surface.mutedForeground;
-  variables["--atlas-surface-border"]           = theme.colors.surface.border;
-  variables["--atlas-surface-ring"]             = theme.colors.surface.ring;
-  variables["--atlas-surface-container-low"]     = theme.colors.surface.containerLow;
-  variables["--atlas-surface-container"]         = theme.colors.surface.container;
-  variables["--atlas-surface-container-high"]    = theme.colors.surface.containerHigh;
-  variables["--atlas-surface-container-highest"] = theme.colors.surface.containerHighest;
-  variables["--atlas-surface-container-lowest"]  = theme.colors.surface.containerLowest;
+  variables["--atlas-surface-background"]         = theme.colors.surface.background;
+  variables["--atlas-surface-foreground"]         = theme.colors.surface.foreground;
+  variables["--atlas-surface-muted"]              = theme.colors.surface.muted;
+  variables["--atlas-surface-muted-foreground"]   = theme.colors.surface.mutedForeground;
+  variables["--atlas-surface-border"]             = theme.colors.surface.border;
+  variables["--atlas-surface-ring"]               = theme.colors.surface.ring;
+  variables["--atlas-surface-container-lowest"]   = theme.colors.surface.containerLowest;
+  variables["--atlas-surface-container-low"]      = theme.colors.surface.containerLow;
+  variables["--atlas-surface-container"]          = theme.colors.surface.container;
+  variables["--atlas-surface-container-high"]     = theme.colors.surface.containerHigh;
+  variables["--atlas-surface-container-highest"]  = theme.colors.surface.containerHighest;
 
   variables["--atlas-shadow-sm"] = theme.shadow.sm;
   variables["--atlas-shadow-md"] = theme.shadow.md;

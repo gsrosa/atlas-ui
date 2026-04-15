@@ -1,41 +1,97 @@
 /* Tailwind v4 theme — single source for utility colors/fonts across shell + MFes.
-   Import via @gsrosa/atlas-ui/styles (globals.css); do not copy this block into apps. */
+   Values here MUST match atlas-ui-base.css :root block (dark-mode defaults).
+   The @theme block registers these as Tailwind utility classes (e.g. bg-primary-500).
+   Import via @gsrosa/atlas-ui/theme; do not copy this block into apps. */
 
 @theme {
-  /* Primary — coral / deep orange (Stitch) */
-  --color-primary-50:  #2a1814;
-  --color-primary-100: #3d221c;
-  --color-primary-200: #4a2520;
+  /* ── Primary — peach → ember ───────────────────────────────── */
+  --color-primary-50:  #fff5f2;
+  --color-primary-100: #ffe8e0;
+  --color-primary-200: #ffd0c2;
   --color-primary-300: #ffb5a0;
-  --color-primary-400: #ffb5a0;
+  --color-primary-400: #ff8f73;
   --color-primary-500: #ff5722;
-  --color-primary-600: #e64d1f;
-  --color-primary-700: #ffdbd1;
+  --color-primary-600: #e64a19;
+  --color-primary-700: #c43e10;
+  --color-primary-800: #9e2f08;
+  --color-primary-900: #7a1f04;
 
-  /* Auxiliary — cyan */
-  --color-auxiliary-50:  #0a1e22;
-  --color-auxiliary-100: #0c2830;
-  --color-auxiliary-200: #123540;
-  --color-auxiliary-300: #00e3fd;
-  --color-auxiliary-400: #bdf4ff;
-  --color-auxiliary-500: #00daf3;
-  --color-auxiliary-600: #00616d;
+  /* ── Auxiliary — glacier blue ───────────────────────────────── */
+  --color-auxiliary-50:  #f0fdff;
+  --color-auxiliary-100: #d4f8ff;
+  --color-auxiliary-200: #bdf4ff;
+  --color-auxiliary-300: #7ee8fc;
+  --color-auxiliary-400: #4dd4e8;
+  --color-auxiliary-500: #26c6da;
+  --color-auxiliary-600: #00838f;
+  --color-auxiliary-700: #00363d;
+  --color-auxiliary-800: #002529;
+  --color-auxiliary-900: #001417;
 
-  /* Neutrals — dark surfaces & on-surface */
-  --color-neutral-50:  #111317;
-  --color-neutral-100: #1a1c20;
-  --color-neutral-200: #1e2024;
-  --color-neutral-300: #282a2e;
-  --color-neutral-400: #414754;
-  --color-neutral-500: #8b90a0;
-  --color-neutral-600: #c1c6d7;
-  --color-neutral-700: #e2e2e8;
+  /* ── Neutral — 50 lightest, 900 darkest ────────────────────── */
+  --color-neutral-0:    #ffffff;
+  --color-neutral-50:   #f8f9fc;
+  --color-neutral-100:  #f1f2f6;
+  --color-neutral-200:  #e2e4ec;
+  --color-neutral-300:  #c8cad6;
+  --color-neutral-400:  #9295aa;
+  --color-neutral-500:  #5a5d72;
+  --color-neutral-600:  #383b4f;
+  --color-neutral-700:  #1e2133;
+  --color-neutral-800:  #16181c;
+  --color-neutral-900:  #111317;
+  --color-neutral-1000: #000000;
 
-  --color-surface:        #111317;
-  --color-surface-muted:  #1a1c20;
-  --color-surface-border: #414754;
+  /* ── Success ───────────────────────────────────────────────── */
+  --color-success-50:  #f0fdf6;
+  --color-success-100: #dcfce9;
+  --color-success-200: #bbf7d4;
+  --color-success-300: #86efad;
+  --color-success-400: #4ade80;
+  --color-success-500: #22c55e;
+  --color-success-600: #16a34a;
+  --color-success-700: #15803d;
+  --color-success-800: #106632;
+  --color-success-900: #0d5429;
 
-  --font-sans: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  /* ── Warning ───────────────────────────────────────────────── */
+  --color-warning-50:  #fffbeb;
+  --color-warning-100: #fef3c7;
+  --color-warning-200: #fde68a;
+  --color-warning-300: #fcd34d;
+  --color-warning-400: #fbbf24;
+  --color-warning-500: #f59e0b;
+  --color-warning-600: #d97706;
+  --color-warning-700: #b45309;
+  --color-warning-800: #92400e;
+  --color-warning-900: #78350f;
+
+  /* ── Danger ────────────────────────────────────────────────── */
+  --color-danger-50:  #fff1f2;
+  --color-danger-100: #ffe4e6;
+  --color-danger-200: #fecdd3;
+  --color-danger-300: #fda4af;
+  --color-danger-400: #fb7185;
+  --color-danger-500: #f43f5e;
+  --color-danger-600: #e11d48;
+  --color-danger-700: #be123c;
+  --color-danger-800: #9b0f30;
+  --color-danger-900: #7f0e29;
+
+  /* ── Info ───────────────────────────────────────────────────── */
+  --color-info-50:  #eff6ff;
+  --color-info-100: #dbeafe;
+  --color-info-200: #bfdbfe;
+  --color-info-300: #93c5fd;
+  --color-info-400: #60a5fa;
+  --color-info-500: #3b82f6;
+  --color-info-600: #2563eb;
+  --color-info-700: #1d4ed8;
+  --color-info-800: #163ea9;
+  --color-info-900: #123386;
+
+  /* ── Typography ────────────────────────────────────────────── */
+  --font-sans:    "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-display: "Noto Serif", ui-serif, Georgia, "Times New Roman", serif;
-  --font-mono: "JetBrains Mono", "Fira Code", monospace;
+  --font-mono:    "JetBrains Mono", "Fira Code", monospace;
 }

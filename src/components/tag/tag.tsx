@@ -5,7 +5,7 @@ import { cn } from "@/utils/cn";
 
 const tagVariants = cva(
   [
-    "inline-flex items-center gap-1 rounded-[var(--atlas-radius-sm)]",
+    "inline-flex items-center gap-1 rounded-(--atlas-radius-sm)",
     "text-xs font-medium transition-colors",
     "border",
   ],
@@ -13,15 +13,15 @@ const tagVariants = cva(
     variants: {
       variant: {
         default:
-          "border-[var(--atlas-color-primary-200)] bg-[var(--atlas-color-primary-50)] text-[var(--atlas-color-primary-700)]",
+          "border-(--atlas-color-primary-200) bg-(--atlas-color-primary-50) text-(--atlas-color-primary-700)",
         success:
-          "border-[var(--atlas-color-success-200)] bg-[var(--atlas-color-success-50)] text-[var(--atlas-color-success-700)]",
+          "border-(--atlas-color-success-200) bg-(--atlas-color-success-50) text-(--atlas-color-success-700)",
         warning:
-          "border-[var(--atlas-color-warning-200)] bg-[var(--atlas-color-warning-50)] text-[var(--atlas-color-warning-700)]",
+          "border-(--atlas-color-warning-200) bg-(--atlas-color-warning-50) text-(--atlas-color-warning-700)",
         danger:
-          "border-[var(--atlas-color-danger-200)] bg-[var(--atlas-color-danger-50)] text-[var(--atlas-color-danger-700)]",
+          "border-(--atlas-color-danger-200) bg-(--atlas-color-danger-50) text-(--atlas-color-danger-700)",
         neutral:
-          "border-[var(--atlas-color-neutral-200)] bg-[var(--atlas-color-neutral-50)] text-[var(--atlas-color-neutral-700)]",
+          "border-(--atlas-color-neutral-200) bg-(--atlas-color-neutral-50) text-(--atlas-color-neutral-700)",
       },
       size: {
         sm: "px-1.5 py-0.5 text-xs",

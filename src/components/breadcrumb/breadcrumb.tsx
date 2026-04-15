@@ -18,7 +18,7 @@ const BreadcrumbList = React.forwardRef<HTMLOListElement, BreadcrumbListProps>(
     <ol
       ref={ref}
       className={cn(
-        "flex flex-wrap items-center gap-1.5 break-words text-sm text-[var(--atlas-surface-muted-foreground)]",
+        "flex flex-wrap items-center gap-1.5 break-words text-sm text-(--atlas-surface-muted-foreground)",
         className,
       )}
       {...props}
@@ -54,7 +54,7 @@ const BreadcrumbLink = React.forwardRef<HTMLAnchorElement, BreadcrumbLinkProps>(
       <Component
         ref={ref}
         className={cn(
-          "transition-colors hover:text-[var(--atlas-surface-foreground)]",
+          "transition-colors hover:text-(--atlas-surface-foreground)",
           className,
         )}
         {...props}
@@ -74,7 +74,7 @@ const BreadcrumbPage = React.forwardRef<HTMLSpanElement, BreadcrumbPageProps>(
       role="link"
       aria-disabled="true"
       aria-current="page"
-      className={cn("font-normal text-[var(--atlas-surface-foreground)]", className)}
+      className={cn("font-normal text-(--atlas-surface-foreground)", className)}
       {...props}
     />
   ),

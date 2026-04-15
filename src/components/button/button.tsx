@@ -8,8 +8,8 @@ const buttonVariants = cva(
   [
     "inline-flex items-center justify-center gap-2 whitespace-nowrap",
     "text-sm font-medium transition-colors",
-    "rounded-[var(--atlas-radius-md)]",
-    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--atlas-surface-ring)] focus-visible:ring-offset-2",
+    "rounded-full",
+    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--atlas-surface-ring) focus-visible:ring-offset-2",
     "disabled:pointer-events-none disabled:opacity-50",
     "[&_svg]:pointer-events-none [&_svg]:shrink-0",
   ],
@@ -17,11 +17,11 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary:
-          "rounded-full bg-[linear-gradient(135deg,var(--atlas-color-primary-300),var(--atlas-color-primary-500))] text-[var(--atlas-color-neutral-700)] hover:opacity-95 active:opacity-90",
+          "bg-(--atlas-color-primary-500) text-white hover:opacity-95 active:opacity-90",
         secondary:
-          "bg-[var(--atlas-surface-container-highest)] text-[var(--atlas-surface-foreground)] hover:brightness-110 active:brightness-95",
+          "bg-(--atlas-surface-container-highest) text-(--atlas-surface-foreground) hover:brightness-110 active:brightness-95",
         ghost:
-          "text-[var(--atlas-surface-foreground)] hover:bg-[color-mix(in_oklab,var(--atlas-color-primary-300)_10%,transparent)] active:bg-[color-mix(in_oklab,var(--atlas-color-primary-300)_14%,transparent)]",
+          "text-(--atlas-surface-foreground) hover:bg-[color-mix(in_oklab,var(--atlas-color-primary-300)_10%,transparent)] active:bg-[color-mix(in_oklab,var(--atlas-color-primary-300)_14%,transparent)]",
       },
       size: {
         sm: "h-8 px-3 text-xs [&_svg]:size-3.5",

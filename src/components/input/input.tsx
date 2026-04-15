@@ -6,11 +6,11 @@ import { cn } from "@/utils/cn";
 const inputVariants = cva(
   [
     "flex w-full font-normal transition-colors",
-    "rounded-[var(--atlas-radius-md)]",
-    "border border-[var(--atlas-surface-border)]",
-    "bg-[var(--atlas-surface-background)] text-[var(--atlas-surface-foreground)]",
-    "placeholder:text-[var(--atlas-surface-muted-foreground)]",
-    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--atlas-surface-ring)] focus-visible:ring-offset-2",
+    "rounded-(--atlas-radius-md)",
+    "border border-(--atlas-surface-border)",
+    "bg-(--atlas-surface-background) text-(--atlas-surface-foreground)",
+    "placeholder:text-(--atlas-surface-muted-foreground)",
+    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--atlas-surface-ring) focus-visible:ring-offset-2",
     "disabled:cursor-not-allowed disabled:opacity-50",
     "file:border-0 file:bg-transparent file:text-sm file:font-medium",
   ],

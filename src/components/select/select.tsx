@@ -17,11 +17,11 @@ const SelectTrigger = React.forwardRef<
   <SelectPrimitive.Trigger
     ref={ref}
     className={cn(
-      "flex h-10 w-full items-center justify-between gap-2 rounded-[var(--atlas-radius-md)] px-3 py-2",
-      "border border-[var(--atlas-surface-border)]",
-      "bg-[var(--atlas-surface-background)] text-sm",
-      "placeholder:text-[var(--atlas-surface-muted-foreground)]",
-      "focus:outline-none focus:ring-2 focus:ring-[var(--atlas-surface-ring)] focus:ring-offset-2",
+      "flex h-10 w-full items-center justify-between gap-2 rounded-(--atlas-radius-md) px-3 py-2",
+      "border border-(--atlas-surface-border)",
+      "bg-(--atlas-surface-background) text-sm",
+      "placeholder:text-(--atlas-surface-muted-foreground)",
+      "focus:outline-none focus:ring-2 focus:ring-(--atlas-surface-ring) focus:ring-offset-2",
       "disabled:cursor-not-allowed disabled:opacity-50",
       "[&>span]:line-clamp-1",
       className,
@@ -59,9 +59,9 @@ const SelectContent = React.forwardRef<
     <SelectPrimitive.Content
       ref={ref}
       className={cn(
-        "relative z-50 max-h-96 min-w-[8rem] overflow-hidden rounded-[var(--atlas-radius-md)]",
-        "border border-[var(--atlas-surface-border)] bg-[var(--atlas-surface-background)]",
-        "text-[var(--atlas-surface-foreground)] shadow-[var(--atlas-shadow-md)]",
+        "relative z-50 max-h-96 min-w-[8rem] overflow-hidden rounded-(--atlas-radius-md)",
+        "border border-(--atlas-surface-border) bg-(--atlas-surface-background)",
+        "text-(--atlas-surface-foreground) shadow-(--atlas-shadow-md)",
         "data-[state=open]:animate-in data-[state=closed]:animate-out",
         "data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
         "data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95",
@@ -99,9 +99,9 @@ const SelectItem = React.forwardRef<
   <SelectPrimitive.Item
     ref={ref}
     className={cn(
-      "relative flex w-full cursor-default select-none items-center rounded-[var(--atlas-radius-sm)] py-1.5 pl-8 pr-2",
+      "relative flex w-full cursor-default select-none items-center rounded-(--atlas-radius-sm) py-1.5 pl-8 pr-2",
       "text-sm outline-none",
-      "focus:bg-[var(--atlas-color-neutral-100)] focus:text-[var(--atlas-surface-foreground)]",
+      "focus:bg-(--atlas-color-neutral-100) focus:text-(--atlas-surface-foreground)",
       "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
       className,
     )}
@@ -154,7 +154,7 @@ const SelectSeparator = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <SelectPrimitive.Separator
     ref={ref}
-    className={cn("-mx-1 my-1 h-px bg-[var(--atlas-surface-border)]", className)}
+    className={cn("-mx-1 my-1 h-px bg-(--atlas-surface-border)", className)}
     {...props}
   />
 ));

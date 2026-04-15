@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap");
 
 /* Atlas UI design tokens + base resets — no Tailwind here.
-   Apps compile one Tailwind v4 pass and @source this package’s src. */
+   Apps compile one Tailwind v4 pass and @source this package's src. */
 
 @layer base {
   :root,
@@ -15,6 +15,8 @@
     --atlas-color-primary-500: #ff5722;
     --atlas-color-primary-600: #e64a19;
     --atlas-color-primary-700: #c43e10;
+    --atlas-color-primary-800: #9e2f08;
+    --atlas-color-primary-900: #7a1f04;
 
     /* ── Auxiliary: Glacier blue ──────────────────────────────────────── */
     --atlas-color-auxiliary-50:  #f0fdff;
@@ -25,9 +27,11 @@
     --atlas-color-auxiliary-500: #26c6da;
     --atlas-color-auxiliary-600: #00838f;
     --atlas-color-auxiliary-700: #00363d;
+    --atlas-color-auxiliary-800: #002529;
+    --atlas-color-auxiliary-900: #001417;
 
     /* ── Neutral (black token = #111317, not #000) ─────────────────────── */
-    --atlas-color-neutral-white: #ffffff;
+    --atlas-color-neutral-0: #ffffff;
     --atlas-color-neutral-50:    #f8f9fc;
     --atlas-color-neutral-100:   #f1f2f6;
     --atlas-color-neutral-200:   #e2e4ec;
@@ -36,7 +40,9 @@
     --atlas-color-neutral-500:   #5a5d72;
     --atlas-color-neutral-600:   #383b4f;
     --atlas-color-neutral-700:   #1e2133;
-    --atlas-color-neutral-black: #111317;
+    --atlas-color-neutral-800:   #16181c;
+    --atlas-color-neutral-900:   #111317;
+    --atlas-color-neutral-1000: #000;
 
     /* ── Success ────────────────────────────────────────────────────────── */
     --atlas-color-success-50:  #f0fdf6;
@@ -46,7 +52,9 @@
     --atlas-color-success-400: #4ade80;
     --atlas-color-success-500: #22c55e;
     --atlas-color-success-600: #16a34a;
-    --atlas-color-success-700: #15803d;
+    --atlas-color-success-700: #15803d; 
+    --atlas-color-success-800: #106632;
+    --atlas-color-success-900: #0d5429;
 
     /* ── Warning ────────────────────────────────────────────────────────── */
     --atlas-color-warning-50:  #fffbeb;
@@ -57,6 +65,8 @@
     --atlas-color-warning-500: #f59e0b;
     --atlas-color-warning-600: #d97706;
     --atlas-color-warning-700: #b45309;
+    --atlas-color-warning-800: #92400e;
+    --atlas-color-warning-900: #78350f;
 
     /* ── Danger ─────────────────────────────────────────────────────────── */
     --atlas-color-danger-50:  #fff1f2;
@@ -67,6 +77,8 @@
     --atlas-color-danger-500: #f43f5e;
     --atlas-color-danger-600: #e11d48;
     --atlas-color-danger-700: #be123c;
+    --atlas-color-danger-800: #9b0f30;
+    --atlas-color-danger-900: #7f0e29;
 
     /* ── Info ───────────────────────────────────────────────────────────── */
     --atlas-color-info-50:  #eff6ff;
@@ -77,19 +89,21 @@
     --atlas-color-info-500: #3b82f6;
     --atlas-color-info-600: #2563eb;
     --atlas-color-info-700: #1d4ed8;
+    --atlas-color-info-800: #163ea9;
+    --atlas-color-info-900: #123386;
 
-    /* ── Dark surfaces — tonal layers ─────────────────────────────────── */
-    --atlas-surface-background:       #111317;
-    --atlas-surface-foreground:       #f1f2f6;
-    --atlas-surface-muted:            #1a1c20;
-    --atlas-surface-muted-foreground: #9295aa;
-    --atlas-surface-border:           #414754;
-    --atlas-surface-ring:             #ffb5a0;
-    --atlas-surface-container-low:     #1a1c20;
-    --atlas-surface-container:         #1e2024;
-    --atlas-surface-container-high:    #282a2e;
-    --atlas-surface-container-highest: #333539;
-    --atlas-surface-container-lowest:  #16181c;
+    /* ── Surface ───────────────────────────────────────────────────────── */
+    --atlas-surface-background:        #111317;
+    --atlas-surface-foreground:        #f1f2f6;
+    --atlas-surface-muted:             #1a1c20;
+    --atlas-surface-muted-foreground:  #9295aa;
+    --atlas-surface-border:            #414754;
+    --atlas-surface-ring:              #ffb5a0;
+    --atlas-surface-container-lowest:  #111317;
+    --atlas-surface-container-low:     #16181c;
+    --atlas-surface-container:         #1c1e26;
+    --atlas-surface-container-high:    #22252f;
+    --atlas-surface-container-highest: #2c303c;
 
     /* ── Shadows (ambient occlusion on dark) ──────────────────────────── */
     --atlas-shadow-sm: 0px 1px 2px 0px rgba(0, 0, 0, 0.4);
@@ -109,19 +123,32 @@
     --atlas-font-mono:    "JetBrains Mono", Consolas, ui-monospace, monospace;
   }
 
-  /* ── Light mode override ──────────────────────────────────────────────── */
+  /* ── Light mode — neutrals are the dark-theme scale reversed ──────────── */
   [data-theme="light"] {
-    --atlas-surface-background:       #ffffff;
-    --atlas-surface-foreground:       #1e2133;
-    --atlas-surface-muted:            #f8f9fc;
-    --atlas-surface-muted-foreground: #9295aa;
-    --atlas-surface-border:           #e2e4ec;
-    --atlas-surface-ring:             #ff5722;
-    --atlas-surface-container-low:     #f3f4f6;
-    --atlas-surface-container:         #eceff1;
-    --atlas-surface-container-high:    #e8eaed;
-    --atlas-surface-container-highest: #dfe3e6;
-    --atlas-surface-container-lowest:  #fafafa;
+    --atlas-color-neutral-0:    #000000;
+    --atlas-color-neutral-50:   #111317;
+    --atlas-color-neutral-100:  #16181c;
+    --atlas-color-neutral-200:  #1e2133;
+    --atlas-color-neutral-300:  #383b4f;
+    --atlas-color-neutral-400:  #5a5d72;
+    --atlas-color-neutral-500:  #9295aa;
+    --atlas-color-neutral-600:  #c8cad6;
+    --atlas-color-neutral-700:  #e2e4ec;
+    --atlas-color-neutral-800:  #f1f2f6;
+    --atlas-color-neutral-900:  #f8f9fc;
+    --atlas-color-neutral-1000: #ffffff;
+
+    --atlas-surface-background:        #ffffff;
+    --atlas-surface-foreground:        #1e2133;
+    --atlas-surface-muted:             #f8f9fc;
+    --atlas-surface-muted-foreground:  #9295aa;
+    --atlas-surface-border:            #e2e4ec;
+    --atlas-surface-ring:              #ff5722;
+    --atlas-surface-container-lowest:  #ffffff;
+    --atlas-surface-container-low:     #f8f9fc;
+    --atlas-surface-container:         #f1f2f6;
+    --atlas-surface-container-high:    #eaebf0;
+    --atlas-surface-container-highest: #e2e4ec;
 
     --atlas-shadow-sm: 0px 1px 1px 0px rgba(0, 0, 0, 0.04), 0px 1px 4px 0px rgba(0, 0, 0, 0.06);
     --atlas-shadow-md: 0px 2px 4px 0px rgba(0, 0, 0, 0.06), 0px 4px 12px 0px rgba(0, 0, 0, 0.10);
@@ -131,55 +158,13 @@
 
   .atlas-ui {
     font-family: var(--atlas-font-sans);
-    color: var(--atlas-surface-foreground);
-    background-color: var(--atlas-surface-background);
+    color: var(--atlas-color-neutral-50);
+    background-color: var(--atlas-color-neutral-900);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   .atlas-ui-display {
     font-family: var(--atlas-font-display);
-  }
-
-  /* Legacy --atlas-* aliases (shell / older markup) — Stitch-aligned dark */
-  :root {
-    --atlas-primary-50:  #ffdbd1;
-    --atlas-primary-100: #ffb5a0;
-    --atlas-primary-200: #ffb5a0;
-    --atlas-primary-300: #ff8a65;
-    --atlas-primary-400: #ff7a5c;
-    --atlas-primary-500: #ff5722;
-    --atlas-primary-600: #e64d1f;
-    --atlas-primary-700: #c42d10;
-
-    --atlas-auxiliary-300: #00e3fd;
-    --atlas-auxiliary-400: #bdf4ff;
-    --atlas-auxiliary-500: #00daf3;
-    --atlas-auxiliary-600: #0891b2;
-
-    --atlas-neutral-50:  #111317;
-    --atlas-neutral-100: #1a1c20;
-    --atlas-neutral-200: #282a2e;
-    --atlas-neutral-300: #414754;
-    --atlas-neutral-400: #8b90a0;
-    --atlas-neutral-500: #c1c6d7;
-    --atlas-neutral-600: #c1c6d7;
-    --atlas-neutral-700: #e2e2e8;
-
-    --atlas-surface-bg:     #111317;
-    --atlas-surface-muted:  #1a1c20;
-    --atlas-surface-border: #414754;
-    --atlas-surface-ring:   #ff5722;
-
-    --atlas-surface-background:         #111317;
-    --atlas-surface-foreground:         #e2e2e8;
-    --atlas-surface-muted-foreground:   #8b90a0;
-    --atlas-color-primary-50:           #ffdbd1;
-    --atlas-color-primary-600:          #ff5722;
-    --atlas-color-primary-700:          #e64d1f;
-    --atlas-color-neutral-100:          #1a1c20;
-    --atlas-color-danger-600:           #e11d48;
-    --atlas-shadow-sm:                  0 12px 40px rgba(0, 0, 0, 0.35);
-    --atlas-radius-md:                  6px;
   }
 }

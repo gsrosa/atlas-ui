@@ -15,9 +15,9 @@ const TabsList = React.forwardRef<
   <TabsPrimitive.List
     ref={ref}
     className={cn(
-      "inline-flex h-10 items-center justify-center gap-1 rounded-[var(--atlas-radius-md)]",
-      "bg-[var(--atlas-color-neutral-100)] p-1",
-      "text-[var(--atlas-surface-muted-foreground)]",
+      "inline-flex h-10 items-center justify-center gap-1 rounded-(--atlas-radius-md)",
+      "bg-(--atlas-color-neutral-100) p-1",
+      "text-(--atlas-surface-muted-foreground)",
       className,
     )}
     {...props}
@@ -36,11 +36,11 @@ const TabsTrigger = React.forwardRef<
   <TabsPrimitive.Trigger
     ref={ref}
     className={cn(
-      "inline-flex items-center justify-center whitespace-nowrap rounded-[var(--atlas-radius-sm)] px-3 py-1.5",
+      "inline-flex items-center justify-center whitespace-nowrap rounded-(--atlas-radius-sm) px-3 py-1.5",
       "text-sm font-medium transition-all",
-      "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--atlas-surface-ring)] focus-visible:ring-offset-2",
+      "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--atlas-surface-ring) focus-visible:ring-offset-2",
       "disabled:pointer-events-none disabled:opacity-50",
-      "data-[state=active]:bg-[var(--atlas-surface-background)] data-[state=active]:text-[var(--atlas-surface-foreground)] data-[state=active]:shadow-sm",
+      "data-[state=active]:bg-(--atlas-surface-background) data-[state=active]:text-(--atlas-surface-foreground) data-[state=active]:shadow-sm",
       className,
     )}
     {...props}
@@ -59,7 +59,7 @@ const TabsContent = React.forwardRef<
   <TabsPrimitive.Content
     ref={ref}
     className={cn(
-      "mt-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--atlas-surface-ring)] focus-visible:ring-offset-2",
+      "mt-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--atlas-surface-ring) focus-visible:ring-offset-2",
       className,
     )}
     {...props}

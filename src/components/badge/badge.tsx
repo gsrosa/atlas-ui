@@ -13,17 +13,17 @@ const badgeVariants = cva(
     variants: {
       variant: {
         default:
-          "border-[var(--atlas-color-primary-200)] bg-[var(--atlas-color-primary-50)] text-[var(--atlas-color-primary-700)]",
+          "border-(--atlas-color-primary-200) bg-(--atlas-color-primary-50) text-(--atlas-color-primary-700)",
         success:
-          "border-[var(--atlas-color-success-200)] bg-[var(--atlas-color-success-50)] text-[var(--atlas-color-success-700)]",
+          "border-(--atlas-color-success-200) bg-(--atlas-color-success-50) text-(--atlas-color-success-700)",
         warning:
-          "border-[var(--atlas-color-warning-200)] bg-[var(--atlas-color-warning-50)] text-[var(--atlas-color-warning-700)]",
+          "border-(--atlas-color-warning-200) bg-(--atlas-color-warning-50) text-(--atlas-color-warning-700)",
         danger:
-          "border-[var(--atlas-color-danger-200)] bg-[var(--atlas-color-danger-50)] text-[var(--atlas-color-danger-700)]",
+          "border-(--atlas-color-danger-200) bg-(--atlas-color-danger-50) text-(--atlas-color-danger-700)",
         info:
-          "border-[var(--atlas-color-info-200)] bg-[var(--atlas-color-info-50)] text-[var(--atlas-color-info-700)]",
+          "border-(--atlas-color-info-200) bg-(--atlas-color-info-50) text-(--atlas-color-info-700)",
         neutral:
-          "border-[var(--atlas-color-neutral-200)] bg-[var(--atlas-color-neutral-50)] text-[var(--atlas-color-neutral-700)]",
+          "border-(--atlas-color-neutral-200) bg-(--atlas-color-neutral-50) text-(--atlas-color-neutral-700)",
       },
     },
     defaultVariants: {
