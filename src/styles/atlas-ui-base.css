@@ -30,19 +30,19 @@
     --atlas-color-auxiliary-800: #002529;
     --atlas-color-auxiliary-900: #001417;
 
-    /* ── Neutral (black token = #111317, not #000) ─────────────────────── */
-    --atlas-color-neutral-0: #ffffff;
-    --atlas-color-neutral-50:    #f8f9fc;
-    --atlas-color-neutral-100:   #f1f2f6;
-    --atlas-color-neutral-200:   #e2e4ec;
-    --atlas-color-neutral-300:   #c8cad6;
-    --atlas-color-neutral-400:   #9295aa;
-    --atlas-color-neutral-500:   #5a5d72;
-    --atlas-color-neutral-600:   #383b4f;
-    --atlas-color-neutral-700:   #1e2133;
-    --atlas-color-neutral-800:   #16181c;
-    --atlas-color-neutral-900:   #111317;
-    --atlas-color-neutral-1000: #000;
+    /* ── Neutral ────────────────────────────────────────────────────────── */
+    --atlas-color-neutral-0:    #ffffff;
+    --atlas-color-neutral-50:   #f8f9fc;
+    --atlas-color-neutral-100:  #f1f2f6;
+    --atlas-color-neutral-200:  #e2e4ec;
+    --atlas-color-neutral-300:  #c8cad6;
+    --atlas-color-neutral-400:  #9295aa;
+    --atlas-color-neutral-500:  #6d6f7e;
+    --atlas-color-neutral-600:  #4a4c58;
+    --atlas-color-neutral-700:  #333336;
+    --atlas-color-neutral-800:  #282829;
+    --atlas-color-neutral-900:  #1e1e1e;
+    --atlas-color-neutral-1000: #000000;
 
     /* ── Success ────────────────────────────────────────────────────────── */
     --atlas-color-success-50:  #f0fdf6;
@@ -93,9 +93,9 @@
     --atlas-color-info-900: #123386;
 
     /* ── Surface ───────────────────────────────────────────────────────── */
-    --atlas-surface-background:        #111317;
+    --atlas-surface-background:        #1b1b1b;
     --atlas-surface-foreground:        #f1f2f6;
-    --atlas-surface-muted:             #1a1c20;
+    --atlas-surface-muted:             #1f1f1f;
     --atlas-surface-muted-foreground:  #9295aa;
     --atlas-surface-border:            #414754;
     --atlas-surface-ring:              #ffb5a0;
@@ -126,11 +126,11 @@
   /* ── Light mode — neutrals are the dark-theme scale reversed ──────────── */
   [data-theme="light"] {
     --atlas-color-neutral-0:    #000000;
-    --atlas-color-neutral-50:   #111317;
-    --atlas-color-neutral-100:  #16181c;
-    --atlas-color-neutral-200:  #1e2133;
-    --atlas-color-neutral-300:  #383b4f;
-    --atlas-color-neutral-400:  #5a5d72;
+    --atlas-color-neutral-50:   #1e1e1e;
+    --atlas-color-neutral-100:  #282829;
+    --atlas-color-neutral-200:  #333336;
+    --atlas-color-neutral-300:  #4a4c58;
+    --atlas-color-neutral-400:  #6d6f7e;
     --atlas-color-neutral-500:  #9295aa;
     --atlas-color-neutral-600:  #c8cad6;
     --atlas-color-neutral-700:  #e2e4ec;

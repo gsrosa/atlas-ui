@@ -8,7 +8,9 @@ import { Button } from "./button";
 describe("Button", () => {
   it("renders with text content", () => {
     render(<Button>Click me</Button>);
-    expect(screen.getByRole("button", { name: "Click me" })).toBeInTheDocument();
+    expect(
+      screen.getByRole("button", { name: "Click me" }),
+    ).toBeInTheDocument();
   });
 
   it("applies primary variant by default", () => {
@@ -20,7 +22,9 @@ describe("Button", () => {
   it("applies secondary variant", () => {
     render(<Button variant="secondary">Secondary</Button>);
     const button = screen.getByRole("button");
-    expect(button.className).toContain("bg-(--atlas-surface-container-highest)");
+    expect(button.className).toContain(
+      "bg-(--atlas-surface-container-highest)",
+    );
   });
 
   it("applies ghost variant", () => {
@@ -52,7 +56,11 @@ describe("Button", () => {
   it("is disabled when disabled prop is set", async () => {
     const user = userEvent.setup();
     const handleClick = vi.fn();
-    render(<Button disabled onClick={handleClick}>Disabled</Button>);
+    render(
+      <Button disabled onClick={handleClick}>
+        Disabled
+      </Button>,
+    );
 
     const button = screen.getByRole("button");
     expect(button).toBeDisabled();

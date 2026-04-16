@@ -16,7 +16,7 @@
   ],
   "files": [
     "dist",
-    "src/styles"
+    "src"
   ],
   "main": "./dist/atlas-ui.cjs",
   "module": "./dist/atlas-ui.js",

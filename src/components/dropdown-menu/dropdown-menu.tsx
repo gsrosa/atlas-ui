@@ -22,10 +22,10 @@ const DropdownMenuContent = React.forwardRef<
       ref={ref}
       sideOffset={sideOffset}
       className={cn(
-        "z-50 min-w-[8rem] overflow-hidden rounded-(--atlas-radius-md) p-1",
-        "border border-(--atlas-surface-border)",
-        "bg-(--atlas-surface-background) text-(--atlas-surface-foreground)",
-        "shadow-(--atlas-shadow-md)",
+        "z-50 min-w-[8rem] overflow-hidden rounded-[var(--atlas-radius-lg)] p-1",
+        "border border-neutral-700",
+        "bg-neutral-900 text-neutral-100",
+        "shadow-[var(--atlas-shadow-md)]",
         "data-[state=open]:animate-in data-[state=closed]:animate-out",
         "data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
         "data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95",
@@ -52,9 +52,9 @@ const DropdownMenuItem = React.forwardRef<
   <DropdownMenuPrimitive.Item
     ref={ref}
     className={cn(
-      "relative flex cursor-default select-none items-center gap-2 rounded-(--atlas-radius-sm) px-2 py-1.5",
-      "text-sm outline-none transition-colors",
-      "focus:bg-(--atlas-color-neutral-100) focus:text-(--atlas-surface-foreground)",
+      "relative flex cursor-default select-none items-center gap-2 rounded-[var(--atlas-radius-md)] px-3 py-2",
+      "text-sm text-neutral-100 outline-none transition-colors",
+      "hover:bg-neutral-700 hover:text-neutral-100 focus:bg-neutral-700 focus:text-neutral-100",
       "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
       "[&>svg]:size-4 [&>svg]:shrink-0",
       inset && "pl-8",
@@ -76,9 +76,9 @@ const DropdownMenuCheckboxItem = React.forwardRef<
   <DropdownMenuPrimitive.CheckboxItem
     ref={ref}
     className={cn(
-      "relative flex cursor-default select-none items-center rounded-(--atlas-radius-sm) py-1.5 pl-8 pr-2",
-      "text-sm outline-none transition-colors",
-      "focus:bg-(--atlas-color-neutral-100) focus:text-(--atlas-surface-foreground)",
+      "relative flex cursor-default select-none items-center rounded-[var(--atlas-radius-md)] py-1.5 pl-8 pr-2",
+      "text-sm text-neutral-100 outline-none transition-colors",
+      "focus:bg-neutral-700 focus:text-neutral-100",
       "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
       className,
     )}
@@ -138,7 +138,7 @@ const DropdownMenuSeparator = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <DropdownMenuPrimitive.Separator
     ref={ref}
-    className={cn("-mx-1 my-1 h-px bg-(--atlas-surface-border)", className)}
+    className={cn("-mx-1 my-1 h-px bg-neutral-700", className)}
     {...props}
   />
 ));

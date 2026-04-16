@@ -7,9 +7,9 @@ import { cn } from "@/utils/cn";
 const buttonVariants = cva(
   [
     "inline-flex items-center justify-center gap-2 whitespace-nowrap",
-    "text-sm font-medium transition-colors",
+    "font-sans font-semibold transition-colors",
     "rounded-full",
-    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--atlas-surface-ring) focus-visible:ring-offset-2",
+    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-300 focus-visible:ring-offset-2",
     "disabled:pointer-events-none disabled:opacity-50",
     "[&_svg]:pointer-events-none [&_svg]:shrink-0",
   ],
@@ -17,11 +17,11 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary:
-          "bg-(--atlas-color-primary-500) text-white hover:opacity-95 active:opacity-90",
+          "bg-primary-500 text-white hover:opacity-95 active:opacity-90",
         secondary:
-          "bg-(--atlas-surface-container-highest) text-(--atlas-surface-foreground) hover:brightness-110 active:brightness-95",
+          "bg-neutral-800 text-neutral-100 hover:brightness-110 active:brightness-95",
         ghost:
-          "text-(--atlas-surface-foreground) hover:bg-[color-mix(in_oklab,var(--atlas-color-primary-300)_10%,transparent)] active:bg-[color-mix(in_oklab,var(--atlas-color-primary-300)_14%,transparent)]",
+          "text-neutral-100 hover:bg-primary-300/10 active:bg-primary-300/14",
       },
       size: {
         sm: "h-8 px-3 text-xs [&_svg]:size-3.5",
@@ -39,8 +39,7 @@ const buttonVariants = cva(
 type ButtonVariantProps = VariantProps<typeof buttonVariants>;
 
 interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    ButtonVariantProps {
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>, ButtonVariantProps {
   asChild?: boolean;
 }
 

@@ -28,18 +28,18 @@
   --color-auxiliary-800: #002529;
   --color-auxiliary-900: #001417;
 
-  /* ── Neutral — 50 lightest, 900 darkest ────────────────────── */
+  /* ── Neutral — 0 lightest, 1000 darkest ────────────────────── */
   --color-neutral-0:    #ffffff;
   --color-neutral-50:   #f8f9fc;
   --color-neutral-100:  #f1f2f6;
   --color-neutral-200:  #e2e4ec;
   --color-neutral-300:  #c8cad6;
   --color-neutral-400:  #9295aa;
-  --color-neutral-500:  #5a5d72;
-  --color-neutral-600:  #383b4f;
-  --color-neutral-700:  #1e2133;
-  --color-neutral-800:  #16181c;
-  --color-neutral-900:  #111317;
+  --color-neutral-500:  #6d6f7e;
+  --color-neutral-600:  #4a4c58;
+  --color-neutral-700:  #333336;
+  --color-neutral-800:  #282829;
+  --color-neutral-900:  #1e1e1e;
   --color-neutral-1000: #000000;
 
   /* ── Success ───────────────────────────────────────────────── */

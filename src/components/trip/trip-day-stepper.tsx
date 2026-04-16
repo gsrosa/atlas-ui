@@ -25,6 +25,8 @@ export interface TripDayStepperProps {
   isLast: boolean;
   attractions: TripAttractionData[];
   lodgingEvents?: LodgingEvent[];
+  /** Google Maps Directions URL for the day's route. When provided, the Map button becomes an active link. */
+  mapsUrl?: string;
   className?: string;
 }
 
@@ -57,6 +59,7 @@ export function TripDayStepper({
   isLast,
   attractions,
   lodgingEvents,
+  mapsUrl,
   className,
 }: TripDayStepperProps) {
   return (
@@ -109,16 +112,29 @@ export function TripDayStepper({
               </div>
             )}
           </div>
-          <button
-            type="button"
-            disabled
-            title="Route map coming soon"
-            aria-label="Map route (coming soon)"
-            className="flex shrink-0 cursor-not-allowed items-center gap-1 rounded-lg border border-(--atlas-surface-border) px-2 py-1 text-[11px] text-(--atlas-surface-muted-foreground) opacity-40"
-          >
-            <MapIcon className="size-3" aria-hidden />
-            Map
-          </button>
+          {mapsUrl ? (
+            <a
+              href={mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open day route in Google Maps"
+              className="flex shrink-0 items-center gap-1 rounded-lg border border-(--atlas-surface-border) px-2 py-1 text-[11px] text-(--atlas-surface-muted-foreground) transition-colors hover:border-(--atlas-color-primary-400) hover:text-(--atlas-color-primary-400)"
+            >
+              <MapIcon className="size-3" aria-hidden />
+              Map
+            </a>
+          ) : (
+            <button
+              type="button"
+              disabled
+              title="Route map coming soon"
+              aria-label="Map route (coming soon)"
+              className="flex shrink-0 cursor-not-allowed items-center gap-1 rounded-lg border border-(--atlas-surface-border) px-2 py-1 text-[11px] text-(--atlas-surface-muted-foreground) opacity-40"
+            >
+              <MapIcon className="size-3" aria-hidden />
+              Map
+            </button>
+          )}
         </div>
 
         {/* Attractions */}
