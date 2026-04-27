@@ -1,11 +1,11 @@
 {
-  "name": "@gsrosa/atlas-ui",
+  "name": "@gsrosa/nexploring-ui",
   "version": "0.1.0",
   "type": "module",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gsrosa/atlas-ui.git"
+    "url": "https://github.com/gsrosa/nexploring-ui.git"
   },
   "packageManager": "pnpm@10.18.1",
   "publishConfig": {
@@ -18,22 +18,22 @@
     "dist",
     "src"
   ],
-  "main": "./dist/atlas-ui.cjs",
-  "module": "./dist/atlas-ui.js",
+  "main": "./dist/nexploring-ui.cjs",
+  "module": "./dist/nexploring-ui.js",
   "types": "./dist/src/index.d.ts",
   "exports": {
     "./package.json": "./package.json",
     ".": {
       "import": {
         "types": "./dist/src/index.d.ts",
-        "default": "./dist/atlas-ui.js"
+        "default": "./dist/nexploring-ui.js"
       },
       "require": {
         "types": "./dist/src/index.d.ts",
-        "default": "./dist/atlas-ui.cjs"
+        "default": "./dist/nexploring-ui.cjs"
       }
     },
-    "./styles": "./dist/atlas-ui.css",
+    "./styles": "./dist/nexploring-ui.css",
     "./styles/globals": "./src/styles/globals.css",
     "./tokens": "./dist/tokens.css",
     "./theme": "./src/styles/atlas-ui-theme.css",
@@ -42,7 +42,7 @@
   "scripts": {
     "prepare": "pnpm run build",
     "dev": "vite",
-    "build": "tsc -b && vite build && vite build --config vite.config.styles.ts && cp src/styles/tokens.css dist/tokens.css && rm -f dist/.atlas-ui-styles-entry dist/.atlas-ui-styles-entry.js",
+    "build": "tsc -b && vite build && vite build --config vite.config.styles.ts && cp src/styles/tokens.css dist/tokens.css && rm -f dist/.nexploring-ui-styles-entry dist/.nexploring-ui-styles-entry.js",
     "lint": "eslint .",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
