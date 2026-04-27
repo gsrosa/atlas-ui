@@ -1,1 +1,1 @@
-export { useAtlasTheme } from "@/theme/provider";
+export { useNexploringTheme } from "@/theme/provider";

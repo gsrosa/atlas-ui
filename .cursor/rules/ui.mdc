@@ -7,7 +7,7 @@ alwaysApply: true
 - Use TailwindCSS as the primary styling approach for all components
 - Use `class-variance-authority` (CVA) to define component variants
 - Utilize the `cn` helper function (`@/utils/cn`) for combining and merging CSS classes
-- Reference design tokens via CSS custom properties (`var(--atlas-*)`) instead of hardcoded values
+- Reference design tokens via CSS custom properties (`var(--*)`) instead of hardcoded values
 
 ## Accessibility
 - Follow WAI-ARIA design patterns for all interactive elements

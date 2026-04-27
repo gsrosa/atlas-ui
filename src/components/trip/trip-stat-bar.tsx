@@ -20,7 +20,7 @@ export interface TripStatBarProps {
 
 function StatChip({ icon, label }: { icon: ReactNode; label: string }) {
   return (
-    <span className="inline-flex items-center gap-1.5 rounded-full border border-(--atlas-surface-border) bg-(--atlas-surface-container) px-3 py-1.5 text-xs font-medium text-(--atlas-surface-muted-foreground)">
+    <span className="inline-flex items-center gap-1.5 rounded-full border border-neutral-700 bg-neutral-800 px-3 py-1.5 text-xs font-medium text-neutral-400">
       {icon}
       {label}
     </span>

@@ -30,9 +30,9 @@ const RadioGroupItem = React.forwardRef<
     ref={ref}
     className={cn(
       "aspect-square size-4 rounded-full",
-      "border border-(--atlas-surface-border)",
-      "text-(--atlas-color-primary-600)",
-      "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--atlas-surface-ring) focus-visible:ring-offset-2",
+      "border border-neutral-700",
+      "text-primary-600",
+      "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-300 focus-visible:ring-offset-2",
       "disabled:cursor-not-allowed disabled:opacity-50",
       "transition-colors",
       className,

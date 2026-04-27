@@ -16,21 +16,21 @@ describe("Button", () => {
   it("applies primary variant by default", () => {
     render(<Button>Primary</Button>);
     const button = screen.getByRole("button");
-    expect(button.className).toContain("bg-(--atlas-color-primary-500)");
+    expect(button.className).toContain("bg-primary-500");
   });
 
   it("applies secondary variant", () => {
     render(<Button variant="secondary">Secondary</Button>);
     const button = screen.getByRole("button");
     expect(button.className).toContain(
-      "bg-(--atlas-surface-container-highest)",
+      "bg-neutral-800",
     );
   });
 
   it("applies ghost variant", () => {
     render(<Button variant="ghost">Ghost</Button>);
     const button = screen.getByRole("button");
-    expect(button.className).not.toContain("bg-(--atlas-color-primary-500)");
+    expect(button.className).not.toContain("bg-primary-500");
   });
 
   it("applies size classes", () => {

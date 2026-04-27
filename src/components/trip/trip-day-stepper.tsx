@@ -44,7 +44,7 @@ function formatPrice(price: { amount: number; currency: string }): string {
 
 function InfoPill({ icon, label }: { icon: ReactNode; label: string }) {
   return (
-    <span className="inline-flex items-center gap-1 rounded-md bg-(--atlas-surface-container) px-1.5 py-0.5 text-[11px] text-(--atlas-surface-muted-foreground)">
+    <span className="inline-flex items-center gap-1 rounded-md bg-neutral-800 px-1.5 py-0.5 text-[11px] text-neutral-400">
       {icon}
       {label}
     </span>
@@ -66,11 +66,11 @@ export function TripDayStepper({
     <div className={cn('flex gap-4', className)}>
       {/* Timeline spine */}
       <div className="flex flex-col items-center">
-        <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-(--atlas-color-primary-500) text-[11px] font-bold text-(--atlas-color-neutral-50) ring-4 ring-[color-mix(in_oklab,var(--atlas-color-primary-500)_20%,transparent)]">
+        <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-primary-500 text-[11px] font-bold text-neutral-50 ring-4 ring-primary-500/20">
           {dayNumber}
         </div>
         {!isLast && (
-          <div className="mt-2 w-px flex-1 bg-[color-mix(in_oklab,var(--atlas-color-primary-400)_30%,transparent)]" />
+          <div className="mt-2 w-px flex-1 bg-primary-400/30" />
         )}
       </div>
 
@@ -80,16 +80,16 @@ export function TripDayStepper({
         <div className="mb-4 flex items-start justify-between gap-3">
           <div>
             <div className="flex flex-wrap items-baseline gap-x-1.5">
-              <span className="text-[11px] font-bold uppercase tracking-widest text-(--atlas-color-primary-400)">
+              <span className="text-[11px] font-bold uppercase tracking-widest text-primary-400">
                 Day {dayNumber}
               </span>
-              <span className="text-sm font-semibold text-(--atlas-surface-foreground)">
+              <span className="text-sm font-semibold text-neutral-100">
                 · {city}
                 {region ? `, ${region}` : ''}
               </span>
             </div>
             {title && (
-              <p className="mt-0.5 text-xs italic text-(--atlas-surface-muted-foreground)">
+              <p className="mt-0.5 text-xs italic text-neutral-400">
                 {title}
               </p>
             )}
@@ -101,8 +101,8 @@ export function TripDayStepper({
                     className={cn(
                       'inline-flex items-center gap-1 text-[11px]',
                       ev.type === 'checkin'
-                        ? 'text-(--atlas-color-primary-400)'
-                        : 'text-(--atlas-surface-muted-foreground)',
+                        ? 'text-primary-400'
+                        : 'text-neutral-400',
                     )}
                   >
                     <BedDoubleIcon className="size-3 shrink-0" aria-hidden />
@@ -118,7 +118,7 @@ export function TripDayStepper({
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Open day route in Google Maps"
-              className="flex shrink-0 items-center gap-1 rounded-lg border border-(--atlas-surface-border) px-2 py-1 text-[11px] text-(--atlas-surface-muted-foreground) transition-colors hover:border-(--atlas-color-primary-400) hover:text-(--atlas-color-primary-400)"
+              className="flex shrink-0 items-center gap-1 rounded-lg border border-neutral-700 px-2 py-1 text-[11px] text-neutral-400 transition-colors hover:border-primary-400 hover:text-primary-400"
             >
               <MapIcon className="size-3" aria-hidden />
               Map
@@ -129,7 +129,7 @@ export function TripDayStepper({
               disabled
               title="Route map coming soon"
               aria-label="Map route (coming soon)"
-              className="flex shrink-0 cursor-not-allowed items-center gap-1 rounded-lg border border-(--atlas-surface-border) px-2 py-1 text-[11px] text-(--atlas-surface-muted-foreground) opacity-40"
+              className="flex shrink-0 cursor-not-allowed items-center gap-1 rounded-lg border border-neutral-700 px-2 py-1 text-[11px] text-neutral-400 opacity-40"
             >
               <MapIcon className="size-3" aria-hidden />
               Map
@@ -143,15 +143,15 @@ export function TripDayStepper({
             {attractions.map((attraction, i) => (
               <li key={i} className="flex gap-2.5">
                 <span
-                  className="mt-2 size-1.5 shrink-0 rounded-full bg-(--atlas-color-primary-400)"
+                  className="mt-2 size-1.5 shrink-0 rounded-full bg-primary-400"
                   aria-hidden
                 />
                 <div className="min-w-0 flex-1">
-                  <p className="text-sm font-medium text-(--atlas-surface-foreground)">
+                  <p className="text-sm font-medium text-neutral-100">
                     {attraction.name}
                   </p>
                   {attraction.address && (
-                    <p className="mt-0.5 text-xs text-(--atlas-surface-muted-foreground)">
+                    <p className="mt-0.5 text-xs text-neutral-400">
                       {attraction.address}
                     </p>
                   )}
@@ -181,7 +181,7 @@ export function TripDayStepper({
                     </div>
                   )}
                   {attraction.notes && (
-                    <p className="mt-1 text-xs italic text-(--atlas-surface-muted-foreground)">
+                    <p className="mt-1 text-xs italic text-neutral-400">
                       {attraction.notes}
                     </p>
                   )}

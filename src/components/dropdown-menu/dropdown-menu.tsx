@@ -22,10 +22,10 @@ const DropdownMenuContent = React.forwardRef<
       ref={ref}
       sideOffset={sideOffset}
       className={cn(
-        "z-50 min-w-[8rem] overflow-hidden rounded-[var(--atlas-radius-lg)] p-1",
+        "z-50 min-w-[8rem] overflow-hidden rounded-lg p-1",
         "border border-neutral-700",
         "bg-neutral-900 text-neutral-100",
-        "shadow-[var(--atlas-shadow-md)]",
+        "shadow-md",
         "data-[state=open]:animate-in data-[state=closed]:animate-out",
         "data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
         "data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95",
@@ -52,7 +52,7 @@ const DropdownMenuItem = React.forwardRef<
   <DropdownMenuPrimitive.Item
     ref={ref}
     className={cn(
-      "relative flex cursor-default select-none items-center gap-2 rounded-[var(--atlas-radius-md)] px-3 py-2",
+      "relative flex cursor-default select-none items-center gap-2 rounded-md px-3 py-2",
       "text-sm text-neutral-100 outline-none transition-colors",
       "hover:bg-neutral-700 hover:text-neutral-100 focus:bg-neutral-700 focus:text-neutral-100",
       "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
@@ -76,7 +76,7 @@ const DropdownMenuCheckboxItem = React.forwardRef<
   <DropdownMenuPrimitive.CheckboxItem
     ref={ref}
     className={cn(
-      "relative flex cursor-default select-none items-center rounded-[var(--atlas-radius-md)] py-1.5 pl-8 pr-2",
+      "relative flex cursor-default select-none items-center rounded-md py-1.5 pl-8 pr-2",
       "text-sm text-neutral-100 outline-none transition-colors",
       "focus:bg-neutral-700 focus:text-neutral-100",
       "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",

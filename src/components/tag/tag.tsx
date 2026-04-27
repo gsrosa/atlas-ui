@@ -5,7 +5,7 @@ import { cn } from "@/utils/cn";
 
 const tagVariants = cva(
   [
-    "inline-flex items-center gap-1 rounded-(--atlas-radius-sm)",
+    "inline-flex items-center gap-1 rounded-sm",
     "text-xs font-medium transition-colors",
     "border",
   ],
@@ -13,15 +13,15 @@ const tagVariants = cva(
     variants: {
       variant: {
         default:
-          "border-(--atlas-color-primary-200) bg-(--atlas-color-primary-50) text-(--atlas-color-primary-700)",
+          "border-primary-200 bg-primary-50 text-primary-700",
         success:
-          "border-(--atlas-color-success-200) bg-(--atlas-color-success-50) text-(--atlas-color-success-700)",
+          "border-success-200 bg-success-50 text-success-700",
         warning:
-          "border-(--atlas-color-warning-200) bg-(--atlas-color-warning-50) text-(--atlas-color-warning-700)",
+          "border-warning-200 bg-warning-50 text-warning-700",
         danger:
-          "border-(--atlas-color-danger-200) bg-(--atlas-color-danger-50) text-(--atlas-color-danger-700)",
+          "border-danger-200 bg-danger-50 text-danger-700",
         neutral:
-          "border-(--atlas-color-neutral-200) bg-(--atlas-color-neutral-50) text-(--atlas-color-neutral-700)",
+          "border-neutral-200 bg-neutral-50 text-neutral-700",
       },
       size: {
         sm: "px-1.5 py-0.5 text-xs",

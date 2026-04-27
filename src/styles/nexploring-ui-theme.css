@@ -1,7 +1,7 @@
 /* Tailwind v4 theme — single source for utility colors/fonts across shell + MFes.
-   Values here MUST match atlas-ui-base.css :root block (dark-mode defaults).
+   Values here MUST match nexploring-ui-base.css :root block (dark-mode defaults).
    The @theme block registers these as Tailwind utility classes (e.g. bg-primary-500).
-   Import via @gsrosa/atlas-ui/theme; do not copy this block into apps. */
+   Import via @gsrosa/nexploring-ui/theme; do not copy this block into apps. */
 
 @theme {
   /* ── Primary — peach → ember ───────────────────────────────── */

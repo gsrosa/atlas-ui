@@ -6,7 +6,7 @@ import { cn } from "@/utils/cn";
 const inputVariants = cva(
   [
     "flex w-full font-normal transition-colors",
-    "rounded-[var(--atlas-radius-lg)]",
+    "rounded-lg",
     "border border-neutral-700",
     "bg-neutral-900 text-neutral-100",
     "placeholder:text-neutral-400",

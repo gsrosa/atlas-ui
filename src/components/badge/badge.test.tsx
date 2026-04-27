@@ -12,7 +12,7 @@ describe("Badge", () => {
 
   it("applies default variant", () => {
     render(<Badge>Default</Badge>);
-    expect(screen.getByText("Default").className).toContain("bg-(--atlas-color-primary-50)");
+    expect(screen.getByText("Default").className).toContain("bg-primary-50");
   });
 
   it("applies all semantic variants", () => {

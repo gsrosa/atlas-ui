@@ -1,4 +1,4 @@
-# @gsrosa/atlas-ui
+# @gsrosa/nexploring-ui
 
 Atlas Design System — a reusable React component library for the Atlas microfrontend ecosystem.
 
@@ -34,7 +34,7 @@ pnpm build
 ### From npm / GitHub Packages (once published)
 
 ```bash
-pnpm add @gsrosa/atlas-ui
+pnpm add @gsrosa/nexploring-ui
 ```
 
 ### Using locally (before publishing)
@@ -43,7 +43,7 @@ From your app (sibling folder or monorepo):
 
 ```bash
 # Option A: file dependency (good while you set up GitHub Actions)
-pnpm add @gsrosa/atlas-ui@file:../atlas-ui
+pnpm add @gsrosa/nexploring-ui@file:../nexploring-ui
 ```
 
 Or in `package.json`:
@@ -51,7 +51,7 @@ Or in `package.json`:
 ```json
 {
   "dependencies": {
-    "@gsrosa/atlas-ui": "file:../atlas-ui"
+    "@gsrosa/nexploring-ui": "file:../nexploring-ui"
   }
 }
 ```
@@ -59,33 +59,33 @@ Or in `package.json`:
 Then install and use:
 
 ```bash
-cd ../atlas-ui && pnpm build && cd -
+cd ../nexploring-ui && pnpm build && cd -
 pnpm install
 ```
 
-The package has a `prepare` script, so running `pnpm install` in your app will also build `atlas-ui` when it’s linked via `file:`.
+The package has a `prepare` script, so running `pnpm install` in your app will also build `nexploring-ui` when it’s linked via `file:`.
 
 ```tsx
-import { Button, AtlasProvider } from "@gsrosa/atlas-ui";
-import "@gsrosa/atlas-ui/styles";
+import { Button, NexploringProvider } from "@gsrosa/nexploring-ui";
+import "@gsrosa/nexploring-ui/styles";
 
 function App() {
   return (
-    <AtlasProvider>
+    <NexploringProvider>
       <Button variant="primary" size="md">
         Click me
       </Button>
-    </AtlasProvider>
+    </NexploringProvider>
   );
 }
 ```
 
 ## Theming
 
-Wrap your app with `AtlasProvider` and pass a custom theme:
+Wrap your app with `NexploringProvider` and pass a custom theme:
 
 ```tsx
-import { AtlasProvider, defaultTheme } from "@gsrosa/atlas-ui";
+import { NexploringProvider, defaultTheme } from "@gsrosa/nexploring-ui";
 
 const customTheme = {
   ...defaultTheme,
@@ -98,7 +98,7 @@ const customTheme = {
   },
 };
 
-<AtlasProvider theme={customTheme}>
+<NexploringProvider theme={customTheme}>
   {children}
-</AtlasProvider>
+</NexploringProvider>
 ```

@@ -166,13 +166,13 @@ export {
   type TooltipContentProps,
 } from "./components/tooltip";
 
-export { AtlasProvider, useAtlasTheme, type ThemeMode } from "./theme";
+export { NexploringProvider, useNexploringTheme, type ThemeMode } from "./theme";
 export {
   defaultTheme,
   lightTheme,
   themeToCSSVariables,
-  type AtlasTheme,
-  type AtlasColorScale,
+  type NexploringTheme,
+  type NexploringColorScale,
 } from "./theme";
 
 export { colors, spacing, radius, shadow, fontFamily, fontSize, fontWeight, letterSpacing } from "./tokens";

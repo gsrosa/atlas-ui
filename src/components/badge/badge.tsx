@@ -13,17 +13,17 @@ const badgeVariants = cva(
     variants: {
       variant: {
         default:
-          "border-(--atlas-color-primary-200) bg-(--atlas-color-primary-50) text-(--atlas-color-primary-700)",
+          "border-primary-200 bg-primary-50 text-primary-700",
         success:
-          "border-(--atlas-color-success-200) bg-(--atlas-color-success-50) text-(--atlas-color-success-700)",
+          "border-success-200 bg-success-50 text-success-700",
         warning:
-          "border-(--atlas-color-warning-200) bg-(--atlas-color-warning-50) text-(--atlas-color-warning-700)",
+          "border-warning-200 bg-warning-50 text-warning-700",
         danger:
-          "border-(--atlas-color-danger-200) bg-(--atlas-color-danger-50) text-(--atlas-color-danger-700)",
+          "border-danger-200 bg-danger-50 text-danger-700",
         info:
-          "border-(--atlas-color-info-200) bg-(--atlas-color-info-50) text-(--atlas-color-info-700)",
+          "border-info-200 bg-info-50 text-info-700",
         neutral:
-          "border-(--atlas-color-neutral-200) bg-(--atlas-color-neutral-50) text-(--atlas-color-neutral-700)",
+          "border-neutral-200 bg-neutral-50 text-neutral-700",
       },
     },
     defaultVariants: {

@@ -1,11 +1,11 @@
 ---
 alwaysApply: true
 ---
-# Atlas UI — Project Structure
+# Nexploring UI — Project Structure
 
 ## Overview
 
-**Atlas UI** is a shared React Design System used across the Atlas microfrontend ecosystem.
+**Nexploring UI** is a shared React Design System used across the Nexploring microfrontend ecosystem.
 
 Its responsibilities include:
 
@@ -73,7 +73,7 @@ src/tokens/typography.ts
 src/tokens/index.ts
 ```
 
-Tokens define the contract between the theme and components. Components read tokens via `var(--atlas-*)`.
+Tokens define the contract between the theme and components. Components read tokens via `var(--*)`.
 
 ---
 
@@ -82,12 +82,12 @@ Tokens define the contract between the theme and components. Components read tok
 Theme definitions and the provider component.
 
 ```
-src/theme/atlas-theme.ts    # Theme type, default values, CSS variable converter
-src/theme/provider.tsx       # AtlasProvider (ThemeContext + CSS variable injection)
+src/theme/nexploring-theme.ts # Theme type, default values, CSS variable converter
+src/theme/provider.tsx        # NexploringProvider (ThemeContext + CSS variable injection)
 src/theme/index.ts
 ```
 
-The `AtlasProvider` must wrap any consumer application to inject the design tokens as CSS custom properties.
+The `NexploringProvider` must wrap any consumer application to inject the design tokens as CSS custom properties.
 
 ---
 
@@ -126,9 +126,9 @@ src/styles/globals.css
 
 Main barrel export. All public API surfaces must be exported from here.
 
-Consumers import from `@atlas/ui`:
+Consumers import from `@gsrosa/nexploring-ui`:
 
 ```tsx
-import { Button, AtlasProvider, cn } from "@atlas/ui";
-import "@atlas/ui/styles";
+import { Button, NexploringProvider, cn } from "@gsrosa/nexploring-ui";
+import "@gsrosa/nexploring-ui/styles";
 ```

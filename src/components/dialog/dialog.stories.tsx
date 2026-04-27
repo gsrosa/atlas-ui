@@ -43,7 +43,7 @@ export const Default: Story = {
           </div>
           <div style={{ display: "grid", gap: "0.25rem" }}>
             <Label htmlFor="username">Username</Label>
-            <Input id="username" defaultValue="@atlas" />
+            <Input id="username" defaultValue="@nexploring" />
           </div>
         </div>
         <DialogFooter>

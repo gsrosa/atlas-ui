@@ -1,6 +1,6 @@
-# atlas-ui
+# nexploring-ui
 
-Shared component library. Published as `@gsrosa/atlas-ui`. Built with Radix UI, CVA, and Tailwind 4.
+Shared component library. Published as `@gsrosa/nexploring-ui`. Built with Radix UI, CVA, and Tailwind 4.
 
 ## Dev
 ```bash
@@ -11,9 +11,9 @@ pnpm build        # compiles to dist/ (ESM + CJS + types)
 
 ## Consuming in Other Packages
 ```ts
-import { Button, Card, cn } from '@gsrosa/atlas-ui';
-import '@gsrosa/atlas-ui/styles';       // component styles
-import '@gsrosa/atlas-ui/styles/globals'; // CSS reset + global tokens
+import { Button, Card, cn } from '@gsrosa/nexploring-ui';
+import '@gsrosa/nexploring-ui/styles';       // component styles
+import '@gsrosa/nexploring-ui/styles/globals'; // CSS reset + global tokens
 ```
 
 ## Component Pattern
@@ -41,8 +41,8 @@ export interface ButtonProps
 ## Tokens & Theme
 - Design tokens in `src/tokens/` — exported as CSS variables and JS values
 - Primary: Indigo (`#6366f1`), Auxiliary: Amber (`#f59e0b`)
-- `AtlasProvider` wraps the app to inject theme context
-- `useAtlasTheme()` to read/set theme mode
+- `NexploringProvider` wraps the app to inject theme context
+- `useNexploringTheme()` to read/set theme mode
 
 ## Exports (from package.json)
 - `.` — all components + utilities

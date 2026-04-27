@@ -1,4 +1,4 @@
-export type AtlasColorScale = {
+export type NexploringColorScale = {
   50: string;
   100: string;
   200: string;
@@ -11,7 +11,7 @@ export type AtlasColorScale = {
   900: string;
 };
 
-export type AtlasSurface = {
+export type NexploringSurface = {
   background: string;
   foreground: string;
   muted: string;
@@ -25,16 +25,16 @@ export type AtlasSurface = {
   containerHighest: string;
 };
 
-export type AtlasTheme = {
+export type NexploringTheme = {
   colors: {
-    primary: AtlasColorScale;
-    auxiliary: AtlasColorScale;
-    neutral: AtlasColorScale & { 0: string; 1000: string };
-    success: AtlasColorScale;
-    warning: AtlasColorScale;
-    danger: AtlasColorScale;
-    info: AtlasColorScale;
-    surface: AtlasSurface;
+    primary: NexploringColorScale;
+    auxiliary: NexploringColorScale;
+    neutral: NexploringColorScale & { 0: string; 1000: string };
+    success: NexploringColorScale;
+    warning: NexploringColorScale;
+    danger: NexploringColorScale;
+    info: NexploringColorScale;
+    surface: NexploringSurface;
   };
   shadow: {
     sm: string;
@@ -55,9 +55,9 @@ export type AtlasTheme = {
   };
 };
 
-/* All hex values below MUST match atlas-ui-base.css :root block exactly. */
+/* All hex values below MUST match nexploring-ui-base.css :root block exactly. */
 
-export const defaultTheme: AtlasTheme = {
+export const defaultTheme: NexploringTheme = {
   colors: {
     primary: {
       50:  "#fff5f2",
@@ -188,7 +188,7 @@ export const defaultTheme: AtlasTheme = {
   },
 };
 
-export const lightSurface: AtlasSurface = {
+export const lightSurface: NexploringSurface = {
   background:       "#ffffff",
   foreground:       "#1e2133",
   muted:            "#f8f9fc",
@@ -202,7 +202,7 @@ export const lightSurface: AtlasSurface = {
   containerHighest: "#e2e4ec",
 };
 
-export const lightTheme: AtlasTheme = {
+export const lightTheme: NexploringTheme = {
   ...defaultTheme,
   colors: {
     ...defaultTheme.colors,
@@ -230,12 +230,12 @@ export const lightTheme: AtlasTheme = {
   },
 };
 
-export const themeToCSSVariables = (theme: AtlasTheme): Record<string, string> => {
+export const themeToCSSVariables = (theme: NexploringTheme): Record<string, string> => {
   const variables: Record<string, string> = {};
 
   const mapScale = (prefix: string, scale: object) => {
     for (const [shade, value] of Object.entries(scale)) {
-      variables[`--atlas-color-${prefix}-${shade}`] = value;
+      variables[`--${prefix}-color-${shade}`] = value;
     }
   };
 
@@ -247,31 +247,31 @@ export const themeToCSSVariables = (theme: AtlasTheme): Record<string, string> =
   mapScale("danger",    theme.colors.danger);
   mapScale("info",      theme.colors.info);
 
-  variables["--atlas-surface-background"]         = theme.colors.surface.background;
-  variables["--atlas-surface-foreground"]         = theme.colors.surface.foreground;
-  variables["--atlas-surface-muted"]              = theme.colors.surface.muted;
-  variables["--atlas-surface-muted-foreground"]   = theme.colors.surface.mutedForeground;
-  variables["--atlas-surface-border"]             = theme.colors.surface.border;
-  variables["--atlas-surface-ring"]               = theme.colors.surface.ring;
-  variables["--atlas-surface-container-lowest"]   = theme.colors.surface.containerLowest;
-  variables["--atlas-surface-container-low"]      = theme.colors.surface.containerLow;
-  variables["--atlas-surface-container"]          = theme.colors.surface.container;
-  variables["--atlas-surface-container-high"]     = theme.colors.surface.containerHigh;
-  variables["--atlas-surface-container-highest"]  = theme.colors.surface.containerHighest;
+  variables["--surface-background"]         = theme.colors.surface.background;
+  variables["--surface-foreground"]         = theme.colors.surface.foreground;
+  variables["--surface-muted"]              = theme.colors.surface.muted;
+  variables["--surface-muted-foreground"]   = theme.colors.surface.mutedForeground;
+  variables["--surface-border"]             = theme.colors.surface.border;
+  variables["--surface-ring"]               = theme.colors.surface.ring;
+  variables["--surface-container-lowest"]   = theme.colors.surface.containerLowest;
+  variables["--surface-container-low"]      = theme.colors.surface.containerLow;
+  variables["--surface-container"]          = theme.colors.surface.container;
+  variables["--surface-container-high"]     = theme.colors.surface.containerHigh;
+  variables["--surface-container-highest"]  = theme.colors.surface.containerHighest;
 
-  variables["--atlas-shadow-sm"] = theme.shadow.sm;
-  variables["--atlas-shadow-md"] = theme.shadow.md;
-  variables["--atlas-shadow-lg"] = theme.shadow.lg;
-  variables["--atlas-shadow-xl"] = theme.shadow.xl;
+  variables["--shadow-sm"] = theme.shadow.sm;
+  variables["--shadow-md"] = theme.shadow.md;
+  variables["--shadow-lg"] = theme.shadow.lg;
+  variables["--shadow-xl"] = theme.shadow.xl;
 
-  variables["--atlas-radius-sm"] = theme.radius.sm;
-  variables["--atlas-radius-md"] = theme.radius.md;
-  variables["--atlas-radius-lg"] = theme.radius.lg;
-  variables["--atlas-radius-xl"] = theme.radius.xl;
+  variables["--radius-sm"] = theme.radius.sm;
+  variables["--radius-md"] = theme.radius.md;
+  variables["--radius-lg"] = theme.radius.lg;
+  variables["--radius-xl"] = theme.radius.xl;
 
-  variables["--atlas-font-sans"]    = theme.font.sans;
-  variables["--atlas-font-display"] = theme.font.display;
-  variables["--atlas-font-mono"]    = theme.font.mono;
+  variables["--font-sans"]    = theme.font.sans;
+  variables["--font-display"] = theme.font.display;
+  variables["--font-mono"]    = theme.font.mono;
 
   return variables;
 };

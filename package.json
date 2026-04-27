@@ -36,8 +36,8 @@
     "./styles": "./dist/nexploring-ui.css",
     "./styles/globals": "./src/styles/globals.css",
     "./tokens": "./dist/tokens.css",
-    "./theme": "./src/styles/atlas-ui-theme.css",
-    "./styles/base": "./src/styles/atlas-ui-base.css"
+    "./theme": "./src/styles/nexploring-ui-theme.css",
+    "./styles/base": "./src/styles/nexploring-ui-base.css"
   },
   "scripts": {
     "prepare": "pnpm run build",

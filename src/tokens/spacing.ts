@@ -34,10 +34,10 @@ export const spacing = {
 
 export const radius = {
   none: "0",
-  sm: "var(--atlas-radius-sm)",
-  md: "var(--atlas-radius-md)",
-  lg: "var(--atlas-radius-lg)",
-  xl: "var(--atlas-radius-xl)",
+  sm: "var(--radius-sm)",
+  md: "var(--radius-md)",
+  lg: "var(--radius-lg)",
+  xl: "var(--radius-xl)",
   full: "9999px",
 } as const;
 

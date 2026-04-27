@@ -2,7 +2,7 @@ export {
   defaultTheme,
   lightTheme,
   themeToCSSVariables,
-  type AtlasTheme,
-  type AtlasColorScale,
-} from "./atlas-theme";
-export { AtlasProvider, useAtlasTheme, type ThemeMode } from "./provider";
+  type NexploringTheme,
+  type NexploringColorScale,
+} from "./nexploring-theme";
+export { NexploringProvider, useNexploringTheme, type ThemeMode } from "./provider";

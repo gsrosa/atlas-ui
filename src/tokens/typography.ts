@@ -7,9 +7,9 @@
  */
 
 export const fontFamily = {
-  sans:    "var(--atlas-font-sans)",
-  display: "var(--atlas-font-display)",
-  mono:    "var(--atlas-font-mono)",
+  sans:    "var(--font-sans)",
+  display: "var(--font-display)",
+  mono:    "var(--font-mono)",
 } as const;
 
 /** Matches design spec: label-md, body-lg, headline-md, display-lg (+ legacy scale). */

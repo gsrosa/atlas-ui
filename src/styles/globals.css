@@ -1,8 +1,8 @@
-@import "./atlas-ui-base.css";
-@import "./atlas-ui-theme.css";
+@import "./nexploring-ui-base.css";
+@import "./nexploring-ui-theme.css";
 @import "tailwindcss";
 
 /* Scan design-system sources inside this package (path is stable in node_modules + monorepo) */
 @source "../**/*.{js,ts,jsx,tsx}";
 
-/* Built to dist/atlas-ui.css. Apps with extra sources import `./styles/globals` or extend Tailwind locally. */
+/* Built to dist/nexploring-ui.css. Apps with extra sources import `./styles/globals` or extend Tailwind locally. */

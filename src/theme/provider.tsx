@@ -1,45 +1,45 @@
 import React from "react";
 
 import {
-  type AtlasTheme,
+  type NexploringTheme,
   defaultTheme,
   lightTheme,
   themeToCSSVariables,
-} from "./atlas-theme";
+} from "./nexploring-theme";
 
 export type ThemeMode = "dark" | "light";
 
-interface AtlasContextValue {
-  theme: AtlasTheme;
+interface NexploringContextValue {
+  theme: NexploringTheme;
   mode: ThemeMode;
   setMode: (mode: ThemeMode) => void;
   toggleMode: () => void;
 }
 
-interface AtlasProviderProps {
+interface NexploringProviderProps {
   /** Initial theme object — overrides the full token set. */
-  theme?: AtlasTheme;
+  theme?: NexploringTheme;
   /** Starting colour mode. Defaults to "dark" (Digital Cartographer default). */
   defaultMode?: ThemeMode;
   children: React.ReactNode;
 }
 
-const ThemeContext = React.createContext<AtlasContextValue>({
+const ThemeContext = React.createContext<NexploringContextValue>({
   theme: defaultTheme,
   mode: "dark",
   setMode: () => undefined,
   toggleMode: () => undefined,
 });
 
-export const useAtlasTheme = (): AtlasContextValue => {
+export const useNexploringTheme = (): NexploringContextValue => {
   return React.useContext(ThemeContext);
 };
 
-export const AtlasProvider = ({
+export const NexploringProvider = ({
   theme,
   defaultMode = "dark",
   children,
-}: AtlasProviderProps) => {
+}: NexploringProviderProps) => {
   const [mode, setMode] = React.useState<ThemeMode>(defaultMode);
 
   const resolvedTheme = React.useMemo(() => {
@@ -65,7 +65,7 @@ export const AtlasProvider = ({
     <ThemeContext.Provider value={contextValue}>
       <div
         style={cssVariables as React.CSSProperties}
-        className="atlas-ui"
+        className="nexploring-ui"
         data-theme={mode}
       >
         {children}
