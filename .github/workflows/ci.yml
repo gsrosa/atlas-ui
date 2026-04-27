@@ -3,6 +3,7 @@ name: CI
 on:
   pull_request:
     branches: [main]
+    types: [closed]
 
 concurrency:
   group: ci-${{ github.ref }}
@@ -10,15 +11,18 @@ concurrency:
 
 jobs:
   ci:
-    name: Lint, Build & Test
+    name: Lint, Build, Test & Tag Release
     runs-on: ubuntu-latest
+    if: ${{ github.event.pull_request.merged == true }}
 
     steps:
-      - uses: https://github.com/actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - uses: pnpm/action-setup@v4
 
-      - uses: https://github.com/actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: pnpm
@@ -34,3 +38,21 @@ jobs:
 
       - name: Test
         run: pnpm test
+
+      - name: Create release tag when version changed
+        run: |
+          if git diff --quiet "${{ github.event.pull_request.base.sha }}" "${{ github.event.pull_request.merge_commit_sha }}" -- package.json; then
+            echo "No package.json version change. Skipping tag."
+            exit 0
+          fi
+
+          VERSION=$(node -p "require('./package.json').version")
+          TAG="nexploring-ui-v${VERSION}"
+
+          if git rev-parse "${TAG}" >/dev/null 2>&1; then
+            echo "Tag ${TAG} already exists. Skipping."
+            exit 0
+          fi
+
+          git tag "${TAG}" "${{ github.event.pull_request.merge_commit_sha }}"
+          git push origin "${TAG}"

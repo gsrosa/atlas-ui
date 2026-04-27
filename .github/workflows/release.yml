@@ -8,11 +8,8 @@ permissions:
   contents: write
   pull-requests: write
 
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-
 jobs:
-  release-please:
+  release:
     name: Create Release PR
     runs-on: ubuntu-latest
 
@@ -21,9 +18,23 @@ jobs:
         with:
           fetch-depth: 0
 
-      - id: release
-        uses: googleapis/release-please-action@v4
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          config-file: release-please-config.json
-          manifest-file: .release-please-manifest.json
+          node-version: 22
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Create or update release PR
+        uses: changesets/action@v1
+        with:
+          version: pnpm version-packages
+          publish: echo "Publishing handled by publish workflow"
+          title: "chore: release"
+          commit: "chore: release"
+          createGithubReleases: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
