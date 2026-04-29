@@ -39,8 +39,11 @@ jobs:
       - name: Test
         run: pnpm test
 
-      - name: Create release tag when version changed
+      - id: tag_release
+        name: Create release tag when version changed
         run: |
+          echo "has_version_change=false" >> "$GITHUB_OUTPUT"
+
           if git diff --quiet "${{ github.event.pull_request.base.sha }}" "${{ github.event.pull_request.merge_commit_sha }}" -- package.json; then
             echo "No package.json version change. Skipping tag."
             exit 0
@@ -48,6 +51,8 @@ jobs:
 
           VERSION=$(node -p "require('./package.json').version")
           TAG="nexploring-ui-v${VERSION}"
+          echo "tag=${TAG}" >> "$GITHUB_OUTPUT"
+          echo "has_version_change=true" >> "$GITHUB_OUTPUT"
 
           if git rev-parse "${TAG}" >/dev/null 2>&1; then
             echo "Tag ${TAG} already exists. Skipping."
@@ -56,3 +61,20 @@ jobs:
 
           git tag "${TAG}" "${{ github.event.pull_request.merge_commit_sha }}"
           git push origin "${TAG}"
+
+      - name: Create GitHub release
+        if: ${{ steps.tag_release.outputs.has_version_change == 'true' }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TAG="${{ steps.tag_release.outputs.tag }}"
+
+          if gh release view "${TAG}" >/dev/null 2>&1; then
+            echo "Release ${TAG} already exists. Skipping."
+            exit 0
+          fi
+
+          gh release create "${TAG}" \
+            --target "${{ github.event.pull_request.merge_commit_sha }}" \
+            --title "${TAG}" \
+            --generate-notes
