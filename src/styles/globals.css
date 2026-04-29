@@ -2,7 +2,5 @@
 @import "./nexploring-ui-theme.css";
 @import "tailwindcss";
 
-/* Scan design-system sources inside this package (path is stable in node_modules + monorepo) */
 @source "../**/*.{js,ts,jsx,tsx}";
 
-/* Built to dist/nexploring-ui.css. Apps with extra sources import `./styles/globals` or extend Tailwind locally. */

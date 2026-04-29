@@ -15,40 +15,30 @@
     "**/*.css"
   ],
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "main": "./dist/nexploring-ui.cjs",
   "module": "./dist/nexploring-ui.js",
-  "types": "./dist/src/index.d.ts",
+  "types": "./dist/index.d.ts",
   "exports": {
     "./package.json": "./package.json",
     ".": {
-      "import": {
-        "types": "./dist/src/index.d.ts",
-        "default": "./dist/nexploring-ui.js"
-      },
-      "require": {
-        "types": "./dist/src/index.d.ts",
-        "default": "./dist/nexploring-ui.cjs"
-      }
+      "types": "./dist/index.d.ts",
+      "import": "./dist/nexploring-ui.js",
+      "require": "./dist/nexploring-ui.cjs"
     },
-    "./styles": "./dist/nexploring-ui.css",
-    "./styles/globals": "./src/styles/globals.css",
-    "./tokens": "./dist/tokens.css",
-    "./theme": "./src/styles/nexploring-ui-theme.css",
-    "./styles/base": "./src/styles/nexploring-ui-base.css"
+    "./styles": "./dist/nexploring-ui.css"
   },
   "scripts": {
     "prepare": "pnpm run build",
     "dev": "vite",
-    "build": "tsc -b && vite build && vite build --config vite.config.styles.ts && cp src/styles/tokens.css dist/tokens.css && rm -f dist/.nexploring-ui-styles-entry dist/.nexploring-ui-styles-entry.js",
+    "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
     "test": "vitest run",
     "test:watch": "vitest",
-    "build-storybook": "storybook build",
     "changeset": "changeset",
     "version-packages": "changeset version",
     "release": "pnpm build && changeset publish"

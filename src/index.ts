@@ -156,7 +156,11 @@ export {
 
 export { Tag, tagVariants, type TagProps } from "./components/tag";
 
-export { Textarea, textareaVariants, type TextareaProps } from "./components/textarea";
+export {
+  Textarea,
+  textareaVariants,
+  type TextareaProps,
+} from "./components/textarea";
 
 export {
   Tooltip,
@@ -166,7 +170,11 @@ export {
   type TooltipContentProps,
 } from "./components/tooltip";
 
-export { NexploringProvider, useNexploringTheme, type ThemeMode } from "./theme";
+export {
+  NexploringProvider,
+  useNexploringTheme,
+  type ThemeMode,
+} from "./theme";
 export {
   defaultTheme,
   lightTheme,
@@ -175,7 +183,16 @@ export {
   type NexploringColorScale,
 } from "./theme";
 
-export { colors, spacing, radius, shadow, fontFamily, fontSize, fontWeight, letterSpacing } from "./tokens";
+export {
+  colors,
+  spacing,
+  radius,
+  shadow,
+  fontFamily,
+  fontSize,
+  fontWeight,
+  letterSpacing,
+} from "./tokens";
 export type {
   ColorToken,
   SpacingToken,
@@ -188,12 +205,3 @@ export type {
 } from "./tokens";
 
 export { cn } from "./utils";
-
-export {
-  TripDayStepper,
-  TripStatBar,
-  type LodgingEvent,
-  type TripAttractionData,
-  type TripDayStepperProps,
-  type TripStatBarProps,
-} from "./components/trip";
